@@ -1,8 +1,28 @@
-backend/data/*.json
-!backend/data/.gitkeep
-dist/
-build/
+# Dependencies
+node_modules/
+
+# Env / secrets
 .env
 .env.local
+.env.*.local
+backend/.env
+streamer/.env
+frontend/.env
+
+# Build output
+dist/
+build/
+frontend/dist/
+
+# Runtime / cache
+backend/data/*.json
+!backend/data/.gitkeep
+streamer/descargas/
 *.log
+
+# Nested clone (not part of Tobis)
+backend/FlashscoreScraping/
+
+# OS / IDE
 .DS_Store
+.vercel
