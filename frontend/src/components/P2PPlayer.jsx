@@ -4,6 +4,7 @@ import {
   checkStreamerHealth,
   getReplayStatus,
   getStreamerBaseUrl,
+  isLocalStreamerUrl,
   getVideoStreamUrl,
   searchReplaySources,
   startReplayStream,
@@ -336,10 +337,22 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
     <div className="space-y-4">
       {!online ? (
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
-          Servicio P2P offline ({getStreamerBaseUrl()}). En PowerShell:
-          <code className="mt-1 block rounded bg-black/30 px-2 py-1 text-xs">
-            cd streamer; npm start
-          </code>
+          {isLocalStreamerUrl(getStreamerBaseUrl()) ? (
+            <>
+              Servicio P2P offline. En PowerShell:
+              <code className="mt-1 block rounded bg-black/30 px-2 py-1 text-xs">
+                cd streamer; npm start
+              </code>
+            </>
+          ) : (
+            <>
+              Repeticiones P2P no disponibles en este momento.
+              <span className="mt-1 block text-xs text-amber-100/70">
+                Los partidos en vivo usan transmision automatica. Para repeticiones, el streamer debe
+                estar desplegado (Render/Fly).
+              </span>
+            </>
+          )}
         </div>
       ) : null}
 

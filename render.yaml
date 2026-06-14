@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: tobalazo-api
+    name: tobis-backend
     env: node
     rootDir: backend
     buildCommand: npm install
@@ -13,9 +13,28 @@ services:
         value: 60000
       - key: LIVESCORE_LOCALE
         value: en
+      - key: API_DAILY_LIMIT
+        value: 100
       - key: FRONTEND_URL
+        sync: false
+      - key: RAPIDAPI_KEY
         sync: false
       - key: SPORTSAPI_KEY
         sync: false
-      - key: APISPORTS_KEY
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: YOUTUBE_API_KEY
+        sync: false
+
+  - type: web
+    name: tobis-streamer
+    env: node
+    rootDir: streamer
+    buildCommand: npm install
+    startCommand: npm start
+    plan: starter
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
         sync: false

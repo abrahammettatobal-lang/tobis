@@ -3,7 +3,7 @@ const LOCAL_ORIGIN =
   /^http:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/i;
 
 const HOSTED_ORIGIN =
-  /^https:\/\/[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*\.(vercel\.app|up\.railway\.app|fly\.dev)$/i;
+  /^https:\/\/[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*\.(vercel\.app|up\.railway\.app|fly\.dev|onrender\.com)$/i;
 
 export function buildCorsOptions() {
   const configured = (process.env.FRONTEND_URL || '')

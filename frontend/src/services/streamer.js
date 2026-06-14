@@ -82,6 +82,10 @@ export function getStreamerBaseUrl() {
   return STREAMER_BASE;
 }
 
+export function isLocalStreamerUrl(url = STREAMER_BASE) {
+  return /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/i.test(String(url || ''));
+}
+
 export function buildReplayQuery(match) {
   if (!match) return '';
   const home = match.teamA?.nameEn || match.teamA?.name || '';
