@@ -16,8 +16,12 @@ import WebTorrent from 'webtorrent';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const IS_CLOUD = Boolean(
-  process.env.RAILWAY_ENVIRONMENT || process.env.FLY_APP_NAME || process.env.VERCEL
+  process.env.RAILWAY_ENVIRONMENT ||
+    process.env.FLY_APP_NAME ||
+    process.env.RENDER ||
+    process.env.VERCEL
 );
+const IS_VERCEL = Boolean(process.env.VERCEL);
 const DOWNLOADS = IS_CLOUD
   ? path.join('/tmp', 'tobis-descargas')
   : path.join(__dirname, 'descargas');
@@ -504,7 +508,11 @@ if (!IS_VERCEL) {
   app.listen(API_PORT, '0.0.0.0', () => {
     const host = process.env.RAILWAY_PUBLIC_DOMAIN
       ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`
-      : `http://localhost:${API_PORT}`;
+      : process.env.RENDER_EXTERNAL_URL
+        ? process.env.RENDER_EXTERNAL_URL
+        : process.env.FLY_APP_NAME
+          ? `https://${process.env.FLY_APP_NAME}.fly.dev`
+          : `http://localhost:${API_PORT}`;
     console.log(`Tobis streamer API en ${host}`);
     console.log(`FFmpeg: ${ffmpegPath ? 'disponible (audio MKV/AC3)' : 'no instalado'}`);
     console.log(`Descargas: ${DOWNLOADS}`);
