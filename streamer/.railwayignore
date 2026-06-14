@@ -1,0 +1,7 @@
+descargas/
+node_modules/
+.vercel/
+*.mkv
+*.mp4
+*.avi
+*.torrent

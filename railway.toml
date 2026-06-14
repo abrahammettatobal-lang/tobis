@@ -1,0 +1,14 @@
+# Monorepo Tobalazo — crea DOS servicios en Railway desde el mismo repo:
+#
+# Servicio 1 "tobis-backend"
+#   Root Directory: backend
+#   Variables: FRONTEND_URL, SPORTSAPI_KEY
+#
+# Servicio 2 "tobis-streamer"
+#   Root Directory: streamer
+#   Variables: FRONTEND_URL
+#   Plan recomendado: al menos 1 GB RAM
+#
+# Luego en Vercel (frontend):
+#   VITE_API_URL=https://<backend>.up.railway.app
+#   VITE_STREAMER_API=https://<streamer>.up.railway.app

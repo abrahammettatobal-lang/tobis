@@ -1,0 +1,8 @@
+backend/data/*.json
+!backend/data/.gitkeep
+dist/
+build/
+.env
+.env.local
+*.log
+.DS_Store

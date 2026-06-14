@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: tobalazo-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SCRAPE_INTERVAL_MS
+        value: 60000
+      - key: LIVESCORE_LOCALE
+        value: en
+      - key: FRONTEND_URL
+        sync: false
+      - key: SPORTSAPI_KEY
+        sync: false
+      - key: APISPORTS_KEY
+        sync: false

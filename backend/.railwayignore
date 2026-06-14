@@ -1,0 +1,5 @@
+node_modules/
+.vercel/
+data/matches-cache.json
+data/api-budget.json
+data/local-schedule.json

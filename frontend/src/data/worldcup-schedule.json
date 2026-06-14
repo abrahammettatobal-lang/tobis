@@ -1,0 +1,2168 @@
+{
+  "matches": [
+    {
+      "id": "1",
+      "teamA": {
+        "name": "México",
+        "nameEn": "Mexico",
+        "abbr": "MEX",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/mx.png",
+        "badgeUrl": "https://flagcdn.com/w80/mx.png"
+      },
+      "teamB": {
+        "name": "Sudáfrica",
+        "nameEn": "South Africa",
+        "abbr": "RSA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/za.png",
+        "badgeUrl": "https://flagcdn.com/w80/za.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-11T14:00:00-06:00",
+      "kickoffDate": "2026-06-11",
+      "group": "A",
+      "matchday": 1,
+      "stage": "Grupo A · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 México vs Sudáfrica",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/mexico-vs-south-africa/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "2",
+      "teamA": {
+        "name": "Corea del Sur",
+        "nameEn": "South Korea",
+        "abbr": "KOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/kr.png",
+        "badgeUrl": "https://flagcdn.com/w80/kr.png"
+      },
+      "teamB": {
+        "name": "Rep. Checa",
+        "nameEn": "Czech Republic",
+        "abbr": "CZE",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cz.png",
+        "badgeUrl": "https://flagcdn.com/w80/cz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-11T21:00:00-06:00",
+      "kickoffDate": "2026-06-11",
+      "group": "A",
+      "matchday": 1,
+      "stage": "Grupo A · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Corea del Sur vs Rep. Checa",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/south-korea-vs-czech-republic/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "3",
+      "teamA": {
+        "name": "Canadá",
+        "nameEn": "Canada",
+        "abbr": "CAN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ca.png",
+        "badgeUrl": "https://flagcdn.com/w80/ca.png"
+      },
+      "teamB": {
+        "name": "Bosnia",
+        "nameEn": "Bosnia and Herzegovina",
+        "abbr": "BIH",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ba.png",
+        "badgeUrl": "https://flagcdn.com/w80/ba.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-12T14:00:00-06:00",
+      "kickoffDate": "2026-06-12",
+      "group": "B",
+      "matchday": 1,
+      "stage": "Grupo B · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Canadá vs Bosnia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/canada-vs-bosnia-and-herzegovina/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "4",
+      "teamA": {
+        "name": "Estados Unidos",
+        "nameEn": "United States",
+        "abbr": "USA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/us.png",
+        "badgeUrl": "https://flagcdn.com/w80/us.png"
+      },
+      "teamB": {
+        "name": "Paraguay",
+        "nameEn": "Paraguay",
+        "abbr": "PAR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/py.png",
+        "badgeUrl": "https://flagcdn.com/w80/py.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-12T20:00:00-06:00",
+      "kickoffDate": "2026-06-12",
+      "group": "D",
+      "matchday": 1,
+      "stage": "Grupo D · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Estados Unidos vs Paraguay",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/united-states-vs-paraguay/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "5",
+      "teamA": {
+        "name": "Qatar",
+        "nameEn": "Qatar",
+        "abbr": "QAT",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/qa.png",
+        "badgeUrl": "https://flagcdn.com/w80/qa.png"
+      },
+      "teamB": {
+        "name": "Suiza",
+        "nameEn": "Switzerland",
+        "abbr": "SUI",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ch.png",
+        "badgeUrl": "https://flagcdn.com/w80/ch.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-13T14:00:00-06:00",
+      "kickoffDate": "2026-06-13",
+      "group": "B",
+      "matchday": 1,
+      "stage": "Grupo B · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Qatar vs Suiza",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/qatar-vs-switzerland/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "6",
+      "teamA": {
+        "name": "Brasil",
+        "nameEn": "Brazil",
+        "abbr": "BRA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/br.png",
+        "badgeUrl": "https://flagcdn.com/w80/br.png"
+      },
+      "teamB": {
+        "name": "Marruecos",
+        "nameEn": "Morocco",
+        "abbr": "MAR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ma.png",
+        "badgeUrl": "https://flagcdn.com/w80/ma.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-13T17:00:00-06:00",
+      "kickoffDate": "2026-06-13",
+      "group": "C",
+      "matchday": 1,
+      "stage": "Grupo C · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Brasil vs Marruecos",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/brazil-vs-morocco/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "7",
+      "teamA": {
+        "name": "Haití",
+        "nameEn": "Haiti",
+        "abbr": "HAI",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ht.png",
+        "badgeUrl": "https://flagcdn.com/w80/ht.png"
+      },
+      "teamB": {
+        "name": "Escocia",
+        "nameEn": "Scotland",
+        "abbr": "SCO",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gb-sct.png",
+        "badgeUrl": "https://flagcdn.com/w80/gb-sct.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-13T20:00:00-06:00",
+      "kickoffDate": "2026-06-13",
+      "group": "C",
+      "matchday": 1,
+      "stage": "Grupo C · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Haití vs Escocia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/haiti-vs-scotland/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "8",
+      "teamA": {
+        "name": "Australia",
+        "nameEn": "Australia",
+        "abbr": "AUS",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/au.png",
+        "badgeUrl": "https://flagcdn.com/w80/au.png"
+      },
+      "teamB": {
+        "name": "Turquia",
+        "nameEn": "Turkey",
+        "abbr": "TUR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/tr.png",
+        "badgeUrl": "https://flagcdn.com/w80/tr.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-13T23:00:00-06:00",
+      "kickoffDate": "2026-06-13",
+      "group": "D",
+      "matchday": 1,
+      "stage": "Grupo D · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Australia vs Turquia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/australia-vs-turkey/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "9",
+      "teamA": {
+        "name": "Alemania",
+        "nameEn": "Germany",
+        "abbr": "GER",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/de.png",
+        "badgeUrl": "https://flagcdn.com/w80/de.png"
+      },
+      "teamB": {
+        "name": "Curazao",
+        "nameEn": "Curacao",
+        "abbr": "CUW",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cw.png",
+        "badgeUrl": "https://flagcdn.com/w80/cw.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-14T12:00:00-06:00",
+      "kickoffDate": "2026-06-14",
+      "group": "E",
+      "matchday": 1,
+      "stage": "Grupo E · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Alemania vs Curazao",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/germany-vs-curacao/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "10",
+      "teamA": {
+        "name": "Países Bajos",
+        "nameEn": "Netherlands",
+        "abbr": "NED",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/nl.png",
+        "badgeUrl": "https://flagcdn.com/w80/nl.png"
+      },
+      "teamB": {
+        "name": "Japón",
+        "nameEn": "Japan",
+        "abbr": "JPN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/jp.png",
+        "badgeUrl": "https://flagcdn.com/w80/jp.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-14T15:00:00-06:00",
+      "kickoffDate": "2026-06-14",
+      "group": "F",
+      "matchday": 1,
+      "stage": "Grupo F · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Países Bajos vs Japón",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/netherlands-vs-japan/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "11",
+      "teamA": {
+        "name": "Costa de Marfil",
+        "nameEn": "Ivory Coast",
+        "abbr": "CIV",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ci.png",
+        "badgeUrl": "https://flagcdn.com/w80/ci.png"
+      },
+      "teamB": {
+        "name": "Ecuador",
+        "nameEn": "Ecuador",
+        "abbr": "ECU",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ec.png",
+        "badgeUrl": "https://flagcdn.com/w80/ec.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-14T18:00:00-06:00",
+      "kickoffDate": "2026-06-14",
+      "group": "E",
+      "matchday": 1,
+      "stage": "Grupo E · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Costa de Marfil vs Ecuador",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/ivory-coast-vs-ecuador/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "12",
+      "teamA": {
+        "name": "Suecia",
+        "nameEn": "Sweden",
+        "abbr": "SWE",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/se.png",
+        "badgeUrl": "https://flagcdn.com/w80/se.png"
+      },
+      "teamB": {
+        "name": "Túnez",
+        "nameEn": "Tunisia",
+        "abbr": "TUN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/tn.png",
+        "badgeUrl": "https://flagcdn.com/w80/tn.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-14T21:00:00-06:00",
+      "kickoffDate": "2026-06-14",
+      "group": "F",
+      "matchday": 1,
+      "stage": "Grupo F · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Suecia vs Túnez",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/sweden-vs-tunisia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "13",
+      "teamA": {
+        "name": "España",
+        "nameEn": "Spain",
+        "abbr": "ESP",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/es.png",
+        "badgeUrl": "https://flagcdn.com/w80/es.png"
+      },
+      "teamB": {
+        "name": "Cabo Verde",
+        "nameEn": "Cape Verde",
+        "abbr": "CPV",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cv.png",
+        "badgeUrl": "https://flagcdn.com/w80/cv.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-15T11:00:00-06:00",
+      "kickoffDate": "2026-06-15",
+      "group": "H",
+      "matchday": 1,
+      "stage": "Grupo H · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 España vs Cabo Verde",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/spain-vs-cape-verde/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "14",
+      "teamA": {
+        "name": "Bélgica",
+        "nameEn": "Belgium",
+        "abbr": "BEL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/be.png",
+        "badgeUrl": "https://flagcdn.com/w80/be.png"
+      },
+      "teamB": {
+        "name": "Egipto",
+        "nameEn": "Egypt",
+        "abbr": "EGY",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/eg.png",
+        "badgeUrl": "https://flagcdn.com/w80/eg.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-15T14:00:00-06:00",
+      "kickoffDate": "2026-06-15",
+      "group": "G",
+      "matchday": 1,
+      "stage": "Grupo G · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Bélgica vs Egipto",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/belgium-vs-egypt/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "15",
+      "teamA": {
+        "name": "Arabia Saudita",
+        "nameEn": "Saudi Arabia",
+        "abbr": "KSA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/sa.png",
+        "badgeUrl": "https://flagcdn.com/w80/sa.png"
+      },
+      "teamB": {
+        "name": "Uruguay",
+        "nameEn": "Uruguay",
+        "abbr": "URU",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/uy.png",
+        "badgeUrl": "https://flagcdn.com/w80/uy.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-15T17:00:00-06:00",
+      "kickoffDate": "2026-06-15",
+      "group": "H",
+      "matchday": 1,
+      "stage": "Grupo H · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Arabia Saudita vs Uruguay",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/saudi-arabia-vs-uruguay/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "16",
+      "teamA": {
+        "name": "Irán",
+        "nameEn": "Iran",
+        "abbr": "IRN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ir.png",
+        "badgeUrl": "https://flagcdn.com/w80/ir.png"
+      },
+      "teamB": {
+        "name": "Nueva Zelanda",
+        "nameEn": "New Zealand",
+        "abbr": "NZL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/nz.png",
+        "badgeUrl": "https://flagcdn.com/w80/nz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-15T20:00:00-06:00",
+      "kickoffDate": "2026-06-15",
+      "group": "G",
+      "matchday": 1,
+      "stage": "Grupo G · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Irán vs Nueva Zelanda",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/iran-vs-new-zealand/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "17",
+      "teamA": {
+        "name": "Francia",
+        "nameEn": "France",
+        "abbr": "FRA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/fr.png",
+        "badgeUrl": "https://flagcdn.com/w80/fr.png"
+      },
+      "teamB": {
+        "name": "Senegal",
+        "nameEn": "Senegal",
+        "abbr": "SEN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/sn.png",
+        "badgeUrl": "https://flagcdn.com/w80/sn.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-16T14:00:00-06:00",
+      "kickoffDate": "2026-06-16",
+      "group": "I",
+      "matchday": 1,
+      "stage": "Grupo I · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Francia vs Senegal",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/france-vs-senegal/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "18",
+      "teamA": {
+        "name": "Irak",
+        "nameEn": "Iraq",
+        "abbr": "IRQ",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/iq.png",
+        "badgeUrl": "https://flagcdn.com/w80/iq.png"
+      },
+      "teamB": {
+        "name": "Noruega",
+        "nameEn": "Norway",
+        "abbr": "NOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/no.png",
+        "badgeUrl": "https://flagcdn.com/w80/no.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-16T17:00:00-06:00",
+      "kickoffDate": "2026-06-16",
+      "group": "I",
+      "matchday": 1,
+      "stage": "Grupo I · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Irak vs Noruega",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/iraq-vs-norway/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "19",
+      "teamA": {
+        "name": "Argentina",
+        "nameEn": "Argentina",
+        "abbr": "ARG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ar.png",
+        "badgeUrl": "https://flagcdn.com/w80/ar.png"
+      },
+      "teamB": {
+        "name": "Argelia",
+        "nameEn": "Algeria",
+        "abbr": "ALG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/dz.png",
+        "badgeUrl": "https://flagcdn.com/w80/dz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-16T20:00:00-06:00",
+      "kickoffDate": "2026-06-16",
+      "group": "J",
+      "matchday": 1,
+      "stage": "Grupo J · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Argentina vs Argelia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/argentina-vs-algeria/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "20",
+      "teamA": {
+        "name": "Austria",
+        "nameEn": "Austria",
+        "abbr": "AUT",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/at.png",
+        "badgeUrl": "https://flagcdn.com/w80/at.png"
+      },
+      "teamB": {
+        "name": "Jordania",
+        "nameEn": "Jordan",
+        "abbr": "JOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/jo.png",
+        "badgeUrl": "https://flagcdn.com/w80/jo.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-16T23:00:00-06:00",
+      "kickoffDate": "2026-06-16",
+      "group": "J",
+      "matchday": 1,
+      "stage": "Grupo J · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Austria vs Jordania",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/austria-vs-jordan/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "21",
+      "teamA": {
+        "name": "Portugal",
+        "nameEn": "Portugal",
+        "abbr": "POR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/pt.png",
+        "badgeUrl": "https://flagcdn.com/w80/pt.png"
+      },
+      "teamB": {
+        "name": "RD Congo",
+        "nameEn": "DR Congo",
+        "abbr": "COD",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cd.png",
+        "badgeUrl": "https://flagcdn.com/w80/cd.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-17T12:00:00-06:00",
+      "kickoffDate": "2026-06-17",
+      "group": "K",
+      "matchday": 1,
+      "stage": "Grupo K · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Portugal vs RD Congo",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/portugal-vs-dr-congo/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "22",
+      "teamA": {
+        "name": "Inglaterra",
+        "nameEn": "England",
+        "abbr": "ENG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gb-eng.png",
+        "badgeUrl": "https://flagcdn.com/w80/gb-eng.png"
+      },
+      "teamB": {
+        "name": "Croacia",
+        "nameEn": "Croatia",
+        "abbr": "CRO",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/hr.png",
+        "badgeUrl": "https://flagcdn.com/w80/hr.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-17T15:00:00-06:00",
+      "kickoffDate": "2026-06-17",
+      "group": "L",
+      "matchday": 1,
+      "stage": "Grupo L · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Inglaterra vs Croacia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/england-vs-croatia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "23",
+      "teamA": {
+        "name": "Ghana",
+        "nameEn": "Ghana",
+        "abbr": "GHA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gh.png",
+        "badgeUrl": "https://flagcdn.com/w80/gh.png"
+      },
+      "teamB": {
+        "name": "Panamá",
+        "nameEn": "Panama",
+        "abbr": "PAN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/pa.png",
+        "badgeUrl": "https://flagcdn.com/w80/pa.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-17T18:00:00-06:00",
+      "kickoffDate": "2026-06-17",
+      "group": "L",
+      "matchday": 1,
+      "stage": "Grupo L · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Ghana vs Panamá",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/ghana-vs-panama/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "24",
+      "teamA": {
+        "name": "Uzbekistán",
+        "nameEn": "Uzbekistan",
+        "abbr": "UZB",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/uz.png",
+        "badgeUrl": "https://flagcdn.com/w80/uz.png"
+      },
+      "teamB": {
+        "name": "Colombia",
+        "nameEn": "Colombia",
+        "abbr": "COL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/co.png",
+        "badgeUrl": "https://flagcdn.com/w80/co.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-17T21:00:00-06:00",
+      "kickoffDate": "2026-06-17",
+      "group": "K",
+      "matchday": 1,
+      "stage": "Grupo K · Jornada 1",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Uzbekistán vs Colombia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/uzbekistan-vs-colombia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "25",
+      "teamA": {
+        "name": "Sudáfrica",
+        "nameEn": "South Africa",
+        "abbr": "RSA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/za.png",
+        "badgeUrl": "https://flagcdn.com/w80/za.png"
+      },
+      "teamB": {
+        "name": "Rep. Checa",
+        "nameEn": "Czech Republic",
+        "abbr": "CZE",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cz.png",
+        "badgeUrl": "https://flagcdn.com/w80/cz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-18T11:00:00-06:00",
+      "kickoffDate": "2026-06-18",
+      "group": "A",
+      "matchday": 2,
+      "stage": "Grupo A · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Sudáfrica vs Rep. Checa",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/south-africa-vs-czech-republic/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "26",
+      "teamA": {
+        "name": "Bosnia",
+        "nameEn": "Bosnia and Herzegovina",
+        "abbr": "BIH",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ba.png",
+        "badgeUrl": "https://flagcdn.com/w80/ba.png"
+      },
+      "teamB": {
+        "name": "Suiza",
+        "nameEn": "Switzerland",
+        "abbr": "SUI",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ch.png",
+        "badgeUrl": "https://flagcdn.com/w80/ch.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-18T14:00:00-06:00",
+      "kickoffDate": "2026-06-18",
+      "group": "B",
+      "matchday": 2,
+      "stage": "Grupo B · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Bosnia vs Suiza",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/bosnia-and-herzegovina-vs-switzerland/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "27",
+      "teamA": {
+        "name": "Canadá",
+        "nameEn": "Canada",
+        "abbr": "CAN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ca.png",
+        "badgeUrl": "https://flagcdn.com/w80/ca.png"
+      },
+      "teamB": {
+        "name": "Qatar",
+        "nameEn": "Qatar",
+        "abbr": "QAT",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/qa.png",
+        "badgeUrl": "https://flagcdn.com/w80/qa.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-18T17:00:00-06:00",
+      "kickoffDate": "2026-06-18",
+      "group": "B",
+      "matchday": 2,
+      "stage": "Grupo B · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Canadá vs Qatar",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/canada-vs-qatar/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "28",
+      "teamA": {
+        "name": "México",
+        "nameEn": "Mexico",
+        "abbr": "MEX",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/mx.png",
+        "badgeUrl": "https://flagcdn.com/w80/mx.png"
+      },
+      "teamB": {
+        "name": "Corea del Sur",
+        "nameEn": "South Korea",
+        "abbr": "KOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/kr.png",
+        "badgeUrl": "https://flagcdn.com/w80/kr.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-18T20:00:00-06:00",
+      "kickoffDate": "2026-06-18",
+      "group": "A",
+      "matchday": 2,
+      "stage": "Grupo A · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 México vs Corea del Sur",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/mexico-vs-south-korea/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "29",
+      "teamA": {
+        "name": "Estados Unidos",
+        "nameEn": "United States",
+        "abbr": "USA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/us.png",
+        "badgeUrl": "https://flagcdn.com/w80/us.png"
+      },
+      "teamB": {
+        "name": "Australia",
+        "nameEn": "Australia",
+        "abbr": "AUS",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/au.png",
+        "badgeUrl": "https://flagcdn.com/w80/au.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-19T14:00:00-06:00",
+      "kickoffDate": "2026-06-19",
+      "group": "D",
+      "matchday": 2,
+      "stage": "Grupo D · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Estados Unidos vs Australia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/united-states-vs-australia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "30",
+      "teamA": {
+        "name": "Escocia",
+        "nameEn": "Scotland",
+        "abbr": "SCO",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gb-sct.png",
+        "badgeUrl": "https://flagcdn.com/w80/gb-sct.png"
+      },
+      "teamB": {
+        "name": "Marruecos",
+        "nameEn": "Morocco",
+        "abbr": "MAR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ma.png",
+        "badgeUrl": "https://flagcdn.com/w80/ma.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-19T17:00:00-06:00",
+      "kickoffDate": "2026-06-19",
+      "group": "C",
+      "matchday": 2,
+      "stage": "Grupo C · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Escocia vs Marruecos",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/scotland-vs-morocco/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "31",
+      "teamA": {
+        "name": "Brasil",
+        "nameEn": "Brazil",
+        "abbr": "BRA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/br.png",
+        "badgeUrl": "https://flagcdn.com/w80/br.png"
+      },
+      "teamB": {
+        "name": "Haití",
+        "nameEn": "Haiti",
+        "abbr": "HAI",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ht.png",
+        "badgeUrl": "https://flagcdn.com/w80/ht.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-19T19:30:00-06:00",
+      "kickoffDate": "2026-06-19",
+      "group": "C",
+      "matchday": 2,
+      "stage": "Grupo C · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Brasil vs Haití",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/brazil-vs-haiti/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "32",
+      "teamA": {
+        "name": "Turquia",
+        "nameEn": "Turkey",
+        "abbr": "TUR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/tr.png",
+        "badgeUrl": "https://flagcdn.com/w80/tr.png"
+      },
+      "teamB": {
+        "name": "Paraguay",
+        "nameEn": "Paraguay",
+        "abbr": "PAR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/py.png",
+        "badgeUrl": "https://flagcdn.com/w80/py.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-19T22:00:00-06:00",
+      "kickoffDate": "2026-06-19",
+      "group": "D",
+      "matchday": 2,
+      "stage": "Grupo D · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Turquia vs Paraguay",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/turkey-vs-paraguay/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "33",
+      "teamA": {
+        "name": "Países Bajos",
+        "nameEn": "Netherlands",
+        "abbr": "NED",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/nl.png",
+        "badgeUrl": "https://flagcdn.com/w80/nl.png"
+      },
+      "teamB": {
+        "name": "Suecia",
+        "nameEn": "Sweden",
+        "abbr": "SWE",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/se.png",
+        "badgeUrl": "https://flagcdn.com/w80/se.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-20T12:00:00-06:00",
+      "kickoffDate": "2026-06-20",
+      "group": "F",
+      "matchday": 2,
+      "stage": "Grupo F · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Países Bajos vs Suecia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/netherlands-vs-sweden/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "34",
+      "teamA": {
+        "name": "Alemania",
+        "nameEn": "Germany",
+        "abbr": "GER",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/de.png",
+        "badgeUrl": "https://flagcdn.com/w80/de.png"
+      },
+      "teamB": {
+        "name": "Costa de Marfil",
+        "nameEn": "Ivory Coast",
+        "abbr": "CIV",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ci.png",
+        "badgeUrl": "https://flagcdn.com/w80/ci.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-20T15:00:00-06:00",
+      "kickoffDate": "2026-06-20",
+      "group": "E",
+      "matchday": 2,
+      "stage": "Grupo E · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Alemania vs Costa de Marfil",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/germany-vs-ivory-coast/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "35",
+      "teamA": {
+        "name": "Ecuador",
+        "nameEn": "Ecuador",
+        "abbr": "ECU",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ec.png",
+        "badgeUrl": "https://flagcdn.com/w80/ec.png"
+      },
+      "teamB": {
+        "name": "Curazao",
+        "nameEn": "Curacao",
+        "abbr": "CUW",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cw.png",
+        "badgeUrl": "https://flagcdn.com/w80/cw.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-20T19:00:00-06:00",
+      "kickoffDate": "2026-06-20",
+      "group": "E",
+      "matchday": 2,
+      "stage": "Grupo E · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Ecuador vs Curazao",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/ecuador-vs-curacao/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "36",
+      "teamA": {
+        "name": "Túnez",
+        "nameEn": "Tunisia",
+        "abbr": "TUN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/tn.png",
+        "badgeUrl": "https://flagcdn.com/w80/tn.png"
+      },
+      "teamB": {
+        "name": "Japón",
+        "nameEn": "Japan",
+        "abbr": "JPN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/jp.png",
+        "badgeUrl": "https://flagcdn.com/w80/jp.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-20T23:00:00-06:00",
+      "kickoffDate": "2026-06-20",
+      "group": "F",
+      "matchday": 2,
+      "stage": "Grupo F · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Túnez vs Japón",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/tunisia-vs-japan/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "37",
+      "teamA": {
+        "name": "España",
+        "nameEn": "Spain",
+        "abbr": "ESP",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/es.png",
+        "badgeUrl": "https://flagcdn.com/w80/es.png"
+      },
+      "teamB": {
+        "name": "Arabia Saudita",
+        "nameEn": "Saudi Arabia",
+        "abbr": "KSA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/sa.png",
+        "badgeUrl": "https://flagcdn.com/w80/sa.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-21T11:00:00-06:00",
+      "kickoffDate": "2026-06-21",
+      "group": "H",
+      "matchday": 2,
+      "stage": "Grupo H · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 España vs Arabia Saudita",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/spain-vs-saudi-arabia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "38",
+      "teamA": {
+        "name": "Bélgica",
+        "nameEn": "Belgium",
+        "abbr": "BEL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/be.png",
+        "badgeUrl": "https://flagcdn.com/w80/be.png"
+      },
+      "teamB": {
+        "name": "Irán",
+        "nameEn": "Iran",
+        "abbr": "IRN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ir.png",
+        "badgeUrl": "https://flagcdn.com/w80/ir.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-21T14:00:00-06:00",
+      "kickoffDate": "2026-06-21",
+      "group": "G",
+      "matchday": 2,
+      "stage": "Grupo G · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Bélgica vs Irán",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/belgium-vs-iran/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "39",
+      "teamA": {
+        "name": "Uruguay",
+        "nameEn": "Uruguay",
+        "abbr": "URU",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/uy.png",
+        "badgeUrl": "https://flagcdn.com/w80/uy.png"
+      },
+      "teamB": {
+        "name": "Cabo Verde",
+        "nameEn": "Cape Verde",
+        "abbr": "CPV",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cv.png",
+        "badgeUrl": "https://flagcdn.com/w80/cv.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-21T17:00:00-06:00",
+      "kickoffDate": "2026-06-21",
+      "group": "H",
+      "matchday": 2,
+      "stage": "Grupo H · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Uruguay vs Cabo Verde",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/uruguay-vs-cape-verde/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "40",
+      "teamA": {
+        "name": "Nueva Zelanda",
+        "nameEn": "New Zealand",
+        "abbr": "NZL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/nz.png",
+        "badgeUrl": "https://flagcdn.com/w80/nz.png"
+      },
+      "teamB": {
+        "name": "Egipto",
+        "nameEn": "Egypt",
+        "abbr": "EGY",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/eg.png",
+        "badgeUrl": "https://flagcdn.com/w80/eg.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-21T20:00:00-06:00",
+      "kickoffDate": "2026-06-21",
+      "group": "G",
+      "matchday": 2,
+      "stage": "Grupo G · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Nueva Zelanda vs Egipto",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/new-zealand-vs-egypt/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "41",
+      "teamA": {
+        "name": "Argentina",
+        "nameEn": "Argentina",
+        "abbr": "ARG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ar.png",
+        "badgeUrl": "https://flagcdn.com/w80/ar.png"
+      },
+      "teamB": {
+        "name": "Austria",
+        "nameEn": "Austria",
+        "abbr": "AUT",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/at.png",
+        "badgeUrl": "https://flagcdn.com/w80/at.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-22T12:00:00-06:00",
+      "kickoffDate": "2026-06-22",
+      "group": "J",
+      "matchday": 2,
+      "stage": "Grupo J · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Argentina vs Austria",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/argentina-vs-austria/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "42",
+      "teamA": {
+        "name": "Francia",
+        "nameEn": "France",
+        "abbr": "FRA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/fr.png",
+        "badgeUrl": "https://flagcdn.com/w80/fr.png"
+      },
+      "teamB": {
+        "name": "Irak",
+        "nameEn": "Iraq",
+        "abbr": "IRQ",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/iq.png",
+        "badgeUrl": "https://flagcdn.com/w80/iq.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-22T16:00:00-06:00",
+      "kickoffDate": "2026-06-22",
+      "group": "I",
+      "matchday": 2,
+      "stage": "Grupo I · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Francia vs Irak",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/france-vs-iraq/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "43",
+      "teamA": {
+        "name": "Noruega",
+        "nameEn": "Norway",
+        "abbr": "NOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/no.png",
+        "badgeUrl": "https://flagcdn.com/w80/no.png"
+      },
+      "teamB": {
+        "name": "Senegal",
+        "nameEn": "Senegal",
+        "abbr": "SEN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/sn.png",
+        "badgeUrl": "https://flagcdn.com/w80/sn.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-22T19:00:00-06:00",
+      "kickoffDate": "2026-06-22",
+      "group": "I",
+      "matchday": 2,
+      "stage": "Grupo I · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Noruega vs Senegal",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/norway-vs-senegal/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "44",
+      "teamA": {
+        "name": "Jordania",
+        "nameEn": "Jordan",
+        "abbr": "JOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/jo.png",
+        "badgeUrl": "https://flagcdn.com/w80/jo.png"
+      },
+      "teamB": {
+        "name": "Argelia",
+        "nameEn": "Algeria",
+        "abbr": "ALG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/dz.png",
+        "badgeUrl": "https://flagcdn.com/w80/dz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-22T22:00:00-06:00",
+      "kickoffDate": "2026-06-22",
+      "group": "J",
+      "matchday": 2,
+      "stage": "Grupo J · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Jordania vs Argelia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/jordan-vs-algeria/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "45",
+      "teamA": {
+        "name": "Portugal",
+        "nameEn": "Portugal",
+        "abbr": "POR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/pt.png",
+        "badgeUrl": "https://flagcdn.com/w80/pt.png"
+      },
+      "teamB": {
+        "name": "Uzbekistán",
+        "nameEn": "Uzbekistan",
+        "abbr": "UZB",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/uz.png",
+        "badgeUrl": "https://flagcdn.com/w80/uz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-23T12:00:00-06:00",
+      "kickoffDate": "2026-06-23",
+      "group": "K",
+      "matchday": 2,
+      "stage": "Grupo K · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Portugal vs Uzbekistán",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/portugal-vs-uzbekistan/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "46",
+      "teamA": {
+        "name": "Inglaterra",
+        "nameEn": "England",
+        "abbr": "ENG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gb-eng.png",
+        "badgeUrl": "https://flagcdn.com/w80/gb-eng.png"
+      },
+      "teamB": {
+        "name": "Ghana",
+        "nameEn": "Ghana",
+        "abbr": "GHA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gh.png",
+        "badgeUrl": "https://flagcdn.com/w80/gh.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-23T15:00:00-06:00",
+      "kickoffDate": "2026-06-23",
+      "group": "L",
+      "matchday": 2,
+      "stage": "Grupo L · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Inglaterra vs Ghana",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/england-vs-ghana/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "47",
+      "teamA": {
+        "name": "Panamá",
+        "nameEn": "Panama",
+        "abbr": "PAN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/pa.png",
+        "badgeUrl": "https://flagcdn.com/w80/pa.png"
+      },
+      "teamB": {
+        "name": "Croacia",
+        "nameEn": "Croatia",
+        "abbr": "CRO",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/hr.png",
+        "badgeUrl": "https://flagcdn.com/w80/hr.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-23T18:00:00-06:00",
+      "kickoffDate": "2026-06-23",
+      "group": "K",
+      "matchday": 2,
+      "stage": "Grupo K · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Panamá vs Croacia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/panama-vs-croatia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "48",
+      "teamA": {
+        "name": "Colombia",
+        "nameEn": "Colombia",
+        "abbr": "COL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/co.png",
+        "badgeUrl": "https://flagcdn.com/w80/co.png"
+      },
+      "teamB": {
+        "name": "RD Congo",
+        "nameEn": "DR Congo",
+        "abbr": "COD",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cd.png",
+        "badgeUrl": "https://flagcdn.com/w80/cd.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-23T21:00:00-06:00",
+      "kickoffDate": "2026-06-23",
+      "group": "K",
+      "matchday": 2,
+      "stage": "Grupo K · Jornada 2",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Colombia vs RD Congo",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/colombia-vs-dr-congo/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "49",
+      "teamA": {
+        "name": "Suiza",
+        "nameEn": "Switzerland",
+        "abbr": "SUI",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ch.png",
+        "badgeUrl": "https://flagcdn.com/w80/ch.png"
+      },
+      "teamB": {
+        "name": "Canadá",
+        "nameEn": "Canada",
+        "abbr": "CAN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ca.png",
+        "badgeUrl": "https://flagcdn.com/w80/ca.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-24T14:00:00-06:00",
+      "kickoffDate": "2026-06-24",
+      "group": "B",
+      "matchday": 3,
+      "stage": "Grupo B · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Suiza vs Canadá",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/switzerland-vs-canada/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "50",
+      "teamA": {
+        "name": "Bosnia",
+        "nameEn": "Bosnia and Herzegovina",
+        "abbr": "BIH",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ba.png",
+        "badgeUrl": "https://flagcdn.com/w80/ba.png"
+      },
+      "teamB": {
+        "name": "Qatar",
+        "nameEn": "Qatar",
+        "abbr": "QAT",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/qa.png",
+        "badgeUrl": "https://flagcdn.com/w80/qa.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-24T14:00:00-06:00",
+      "kickoffDate": "2026-06-24",
+      "group": "B",
+      "matchday": 3,
+      "stage": "Grupo B · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Bosnia vs Qatar",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/bosnia-and-herzegovina-vs-qatar/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "51",
+      "teamA": {
+        "name": "Escocia",
+        "nameEn": "Scotland",
+        "abbr": "SCO",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gb-sct.png",
+        "badgeUrl": "https://flagcdn.com/w80/gb-sct.png"
+      },
+      "teamB": {
+        "name": "Brasil",
+        "nameEn": "Brazil",
+        "abbr": "BRA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/br.png",
+        "badgeUrl": "https://flagcdn.com/w80/br.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-24T17:00:00-06:00",
+      "kickoffDate": "2026-06-24",
+      "group": "C",
+      "matchday": 3,
+      "stage": "Grupo C · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Escocia vs Brasil",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/scotland-vs-brazil/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "52",
+      "teamA": {
+        "name": "Marruecos",
+        "nameEn": "Morocco",
+        "abbr": "MAR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ma.png",
+        "badgeUrl": "https://flagcdn.com/w80/ma.png"
+      },
+      "teamB": {
+        "name": "Haití",
+        "nameEn": "Haiti",
+        "abbr": "HAI",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ht.png",
+        "badgeUrl": "https://flagcdn.com/w80/ht.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-24T17:00:00-06:00",
+      "kickoffDate": "2026-06-24",
+      "group": "C",
+      "matchday": 3,
+      "stage": "Grupo C · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Marruecos vs Haití",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/morocco-vs-haiti/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "53",
+      "teamA": {
+        "name": "Rep. Checa",
+        "nameEn": "Czech Republic",
+        "abbr": "CZE",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cz.png",
+        "badgeUrl": "https://flagcdn.com/w80/cz.png"
+      },
+      "teamB": {
+        "name": "México",
+        "nameEn": "Mexico",
+        "abbr": "MEX",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/mx.png",
+        "badgeUrl": "https://flagcdn.com/w80/mx.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-24T20:00:00-06:00",
+      "kickoffDate": "2026-06-24",
+      "group": "A",
+      "matchday": 3,
+      "stage": "Grupo A · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Rep. Checa vs México",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/czech-republic-vs-mexico/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "54",
+      "teamA": {
+        "name": "Sudáfrica",
+        "nameEn": "South Africa",
+        "abbr": "RSA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/za.png",
+        "badgeUrl": "https://flagcdn.com/w80/za.png"
+      },
+      "teamB": {
+        "name": "Corea del Sur",
+        "nameEn": "South Korea",
+        "abbr": "KOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/kr.png",
+        "badgeUrl": "https://flagcdn.com/w80/kr.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-24T20:00:00-06:00",
+      "kickoffDate": "2026-06-24",
+      "group": "A",
+      "matchday": 3,
+      "stage": "Grupo A · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Sudáfrica vs Corea del Sur",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/south-africa-vs-south-korea/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "55",
+      "teamA": {
+        "name": "Ecuador",
+        "nameEn": "Ecuador",
+        "abbr": "ECU",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ec.png",
+        "badgeUrl": "https://flagcdn.com/w80/ec.png"
+      },
+      "teamB": {
+        "name": "Alemania",
+        "nameEn": "Germany",
+        "abbr": "GER",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/de.png",
+        "badgeUrl": "https://flagcdn.com/w80/de.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-25T15:00:00-06:00",
+      "kickoffDate": "2026-06-25",
+      "group": "E",
+      "matchday": 3,
+      "stage": "Grupo E · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Ecuador vs Alemania",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/ecuador-vs-germany/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "56",
+      "teamA": {
+        "name": "Curazao",
+        "nameEn": "Curacao",
+        "abbr": "CUW",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cw.png",
+        "badgeUrl": "https://flagcdn.com/w80/cw.png"
+      },
+      "teamB": {
+        "name": "Costa de Marfil",
+        "nameEn": "Ivory Coast",
+        "abbr": "CIV",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ci.png",
+        "badgeUrl": "https://flagcdn.com/w80/ci.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-25T15:00:00-06:00",
+      "kickoffDate": "2026-06-25",
+      "group": "E",
+      "matchday": 3,
+      "stage": "Grupo E · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Curazao vs Costa de Marfil",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/curacao-vs-ivory-coast/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "57",
+      "teamA": {
+        "name": "Túnez",
+        "nameEn": "Tunisia",
+        "abbr": "TUN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/tn.png",
+        "badgeUrl": "https://flagcdn.com/w80/tn.png"
+      },
+      "teamB": {
+        "name": "Países Bajos",
+        "nameEn": "Netherlands",
+        "abbr": "NED",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/nl.png",
+        "badgeUrl": "https://flagcdn.com/w80/nl.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-25T18:00:00-06:00",
+      "kickoffDate": "2026-06-25",
+      "group": "F",
+      "matchday": 3,
+      "stage": "Grupo F · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Túnez vs Países Bajos",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/tunisia-vs-netherlands/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "58",
+      "teamA": {
+        "name": "Japón",
+        "nameEn": "Japan",
+        "abbr": "JPN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/jp.png",
+        "badgeUrl": "https://flagcdn.com/w80/jp.png"
+      },
+      "teamB": {
+        "name": "Suecia",
+        "nameEn": "Sweden",
+        "abbr": "SWE",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/se.png",
+        "badgeUrl": "https://flagcdn.com/w80/se.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-25T18:00:00-06:00",
+      "kickoffDate": "2026-06-25",
+      "group": "F",
+      "matchday": 3,
+      "stage": "Grupo F · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Japón vs Suecia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/japan-vs-sweden/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "59",
+      "teamA": {
+        "name": "Turquia",
+        "nameEn": "Turkey",
+        "abbr": "TUR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/tr.png",
+        "badgeUrl": "https://flagcdn.com/w80/tr.png"
+      },
+      "teamB": {
+        "name": "Estados Unidos",
+        "nameEn": "United States",
+        "abbr": "USA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/us.png",
+        "badgeUrl": "https://flagcdn.com/w80/us.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-25T21:00:00-06:00",
+      "kickoffDate": "2026-06-25",
+      "group": "D",
+      "matchday": 3,
+      "stage": "Grupo D · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Turquia vs Estados Unidos",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/turkey-vs-united-states/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "60",
+      "teamA": {
+        "name": "Paraguay",
+        "nameEn": "Paraguay",
+        "abbr": "PAR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/py.png",
+        "badgeUrl": "https://flagcdn.com/w80/py.png"
+      },
+      "teamB": {
+        "name": "Australia",
+        "nameEn": "Australia",
+        "abbr": "AUS",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/au.png",
+        "badgeUrl": "https://flagcdn.com/w80/au.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-25T21:00:00-06:00",
+      "kickoffDate": "2026-06-25",
+      "group": "D",
+      "matchday": 3,
+      "stage": "Grupo D · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Paraguay vs Australia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/paraguay-vs-australia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "61",
+      "teamA": {
+        "name": "Noruega",
+        "nameEn": "Norway",
+        "abbr": "NOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/no.png",
+        "badgeUrl": "https://flagcdn.com/w80/no.png"
+      },
+      "teamB": {
+        "name": "Francia",
+        "nameEn": "France",
+        "abbr": "FRA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/fr.png",
+        "badgeUrl": "https://flagcdn.com/w80/fr.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-26T14:00:00-06:00",
+      "kickoffDate": "2026-06-26",
+      "group": "I",
+      "matchday": 3,
+      "stage": "Grupo I · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Noruega vs Francia",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/norway-vs-france/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "62",
+      "teamA": {
+        "name": "Senegal",
+        "nameEn": "Senegal",
+        "abbr": "SEN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/sn.png",
+        "badgeUrl": "https://flagcdn.com/w80/sn.png"
+      },
+      "teamB": {
+        "name": "Irak",
+        "nameEn": "Iraq",
+        "abbr": "IRQ",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/iq.png",
+        "badgeUrl": "https://flagcdn.com/w80/iq.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-26T14:00:00-06:00",
+      "kickoffDate": "2026-06-26",
+      "group": "I",
+      "matchday": 3,
+      "stage": "Grupo I · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Senegal vs Irak",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/senegal-vs-iraq/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "63",
+      "teamA": {
+        "name": "Uruguay",
+        "nameEn": "Uruguay",
+        "abbr": "URU",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/uy.png",
+        "badgeUrl": "https://flagcdn.com/w80/uy.png"
+      },
+      "teamB": {
+        "name": "España",
+        "nameEn": "Spain",
+        "abbr": "ESP",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/es.png",
+        "badgeUrl": "https://flagcdn.com/w80/es.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-26T19:00:00-06:00",
+      "kickoffDate": "2026-06-26",
+      "group": "H",
+      "matchday": 3,
+      "stage": "Grupo H · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Uruguay vs España",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/uruguay-vs-spain/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "64",
+      "teamA": {
+        "name": "Cabo Verde",
+        "nameEn": "Cape Verde",
+        "abbr": "CPV",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cv.png",
+        "badgeUrl": "https://flagcdn.com/w80/cv.png"
+      },
+      "teamB": {
+        "name": "Arabia Saudita",
+        "nameEn": "Saudi Arabia",
+        "abbr": "KSA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/sa.png",
+        "badgeUrl": "https://flagcdn.com/w80/sa.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-26T19:00:00-06:00",
+      "kickoffDate": "2026-06-26",
+      "group": "H",
+      "matchday": 3,
+      "stage": "Grupo H · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Cabo Verde vs Arabia Saudita",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/cape-verde-vs-saudi-arabia/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "65",
+      "teamA": {
+        "name": "Nueva Zelanda",
+        "nameEn": "New Zealand",
+        "abbr": "NZL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/nz.png",
+        "badgeUrl": "https://flagcdn.com/w80/nz.png"
+      },
+      "teamB": {
+        "name": "Bélgica",
+        "nameEn": "Belgium",
+        "abbr": "BEL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/be.png",
+        "badgeUrl": "https://flagcdn.com/w80/be.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-26T22:00:00-06:00",
+      "kickoffDate": "2026-06-26",
+      "group": "G",
+      "matchday": 3,
+      "stage": "Grupo G · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Nueva Zelanda vs Bélgica",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/new-zealand-vs-belgium/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "66",
+      "teamA": {
+        "name": "Egipto",
+        "nameEn": "Egypt",
+        "abbr": "EGY",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/eg.png",
+        "badgeUrl": "https://flagcdn.com/w80/eg.png"
+      },
+      "teamB": {
+        "name": "Irán",
+        "nameEn": "Iran",
+        "abbr": "IRN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ir.png",
+        "badgeUrl": "https://flagcdn.com/w80/ir.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-26T22:00:00-06:00",
+      "kickoffDate": "2026-06-26",
+      "group": "G",
+      "matchday": 3,
+      "stage": "Grupo G · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Egipto vs Irán",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/egypt-vs-iran/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "67",
+      "teamA": {
+        "name": "Panamá",
+        "nameEn": "Panama",
+        "abbr": "PAN",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/pa.png",
+        "badgeUrl": "https://flagcdn.com/w80/pa.png"
+      },
+      "teamB": {
+        "name": "Inglaterra",
+        "nameEn": "England",
+        "abbr": "ENG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gb-eng.png",
+        "badgeUrl": "https://flagcdn.com/w80/gb-eng.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-27T16:00:00-06:00",
+      "kickoffDate": "2026-06-27",
+      "group": "L",
+      "matchday": 3,
+      "stage": "Grupo L · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Panamá vs Inglaterra",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/panama-vs-england/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "68",
+      "teamA": {
+        "name": "Croacia",
+        "nameEn": "Croatia",
+        "abbr": "CRO",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/hr.png",
+        "badgeUrl": "https://flagcdn.com/w80/hr.png"
+      },
+      "teamB": {
+        "name": "Ghana",
+        "nameEn": "Ghana",
+        "abbr": "GHA",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/gh.png",
+        "badgeUrl": "https://flagcdn.com/w80/gh.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-27T16:00:00-06:00",
+      "kickoffDate": "2026-06-27",
+      "group": "L",
+      "matchday": 3,
+      "stage": "Grupo L · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Croacia vs Ghana",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/croatia-vs-ghana/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "69",
+      "teamA": {
+        "name": "Colombia",
+        "nameEn": "Colombia",
+        "abbr": "COL",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/co.png",
+        "badgeUrl": "https://flagcdn.com/w80/co.png"
+      },
+      "teamB": {
+        "name": "Portugal",
+        "nameEn": "Portugal",
+        "abbr": "POR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/pt.png",
+        "badgeUrl": "https://flagcdn.com/w80/pt.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-27T18:30:00-06:00",
+      "kickoffDate": "2026-06-27",
+      "group": "K",
+      "matchday": 3,
+      "stage": "Grupo K · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Colombia vs Portugal",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/colombia-vs-portugal/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "70",
+      "teamA": {
+        "name": "RD Congo",
+        "nameEn": "DR Congo",
+        "abbr": "COD",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/cd.png",
+        "badgeUrl": "https://flagcdn.com/w80/cd.png"
+      },
+      "teamB": {
+        "name": "Uzbekistán",
+        "nameEn": "Uzbekistan",
+        "abbr": "UZB",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/uz.png",
+        "badgeUrl": "https://flagcdn.com/w80/uz.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-27T18:30:00-06:00",
+      "kickoffDate": "2026-06-27",
+      "group": "K",
+      "matchday": 3,
+      "stage": "Grupo K · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 RD Congo vs Uzbekistán",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/dr-congo-vs-uzbekistan/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "71",
+      "teamA": {
+        "name": "Jordania",
+        "nameEn": "Jordan",
+        "abbr": "JOR",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/jo.png",
+        "badgeUrl": "https://flagcdn.com/w80/jo.png"
+      },
+      "teamB": {
+        "name": "Argentina",
+        "nameEn": "Argentina",
+        "abbr": "ARG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/ar.png",
+        "badgeUrl": "https://flagcdn.com/w80/ar.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-27T21:00:00-06:00",
+      "kickoffDate": "2026-06-27",
+      "group": "J",
+      "matchday": 3,
+      "stage": "Grupo J · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Jordania vs Argentina",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/jordan-vs-argentina/",
+      "scheduleSource": "pdf"
+    },
+    {
+      "id": "72",
+      "teamA": {
+        "name": "Argelia",
+        "nameEn": "Algeria",
+        "abbr": "ALG",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/dz.png",
+        "badgeUrl": "https://flagcdn.com/w80/dz.png"
+      },
+      "teamB": {
+        "name": "Austria",
+        "nameEn": "Austria",
+        "abbr": "AUT",
+        "goals": 0,
+        "flag": "https://flagcdn.com/w80/at.png",
+        "badgeUrl": "https://flagcdn.com/w80/at.png"
+      },
+      "minute": null,
+      "status": "Por empezar",
+      "kickoffTime": "2026-06-27T21:00:00-06:00",
+      "kickoffDate": "2026-06-27",
+      "group": "J",
+      "matchday": 3,
+      "stage": "Grupo J · Jornada 3",
+      "venue": "",
+      "youtubeQuery": "relato en vivo mundial 2026 Argelia vs Austria",
+      "livescoreUrl": "https://www.livescore.com/en/football/international/world-cup-2026/algeria-vs-austria/",
+      "scheduleSource": "pdf"
+    }
+  ],
+  "updatedAt": "2026-06-12T02:04:52.372Z",
+  "source": "pdf-calendario-fifa-2026",
+  "timezone": "America/Mexico_City",
+  "referenceFile": "Calendario-Copa-Mundial-de-la-FIFA-2026-Tabloide-4.pdf"
+}
