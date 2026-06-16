@@ -1,4 +1,5 @@
 import { formatKickoffTime } from '../services/api.js';
+import { resolveMatchStatus } from '../utils/matchPlayback.js';
 
 function TeamBadge({ team }) {
   return (
@@ -26,9 +27,10 @@ export default function ScoreCard({
   onSelect,
   children,
 }) {
-  const isLive = match.status === 'En Vivo';
-  const isFinished = match.status === 'Finalizado';
-  const statusLabel = match.displayStatus || match.status;
+  const resolvedStatus = resolveMatchStatus(match);
+  const isLive = resolvedStatus === 'En Vivo';
+  const isFinished = resolvedStatus === 'Finalizado';
+  const statusLabel = match.displayStatus || resolvedStatus || match.status;
 
   return (
     <article
