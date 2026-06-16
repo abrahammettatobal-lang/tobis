@@ -1,13 +1,6 @@
 # Dependencies
 node_modules/
 
-# Env / secrets
-.env
-.env.local
-.env.*.local
-backend/.env
-streamer/.env
-frontend/.env
 
 # Build output
 dist/

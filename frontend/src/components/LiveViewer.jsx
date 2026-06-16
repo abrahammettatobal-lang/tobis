@@ -2,13 +2,12 @@ import { useMemo } from 'react';
 import MatchNotStarted from './MatchNotStarted.jsx';
 import P2PPlayer from './P2PPlayer.jsx';
 import SportsHLSViewer from './SportsHLSViewer.jsx';
-import { getMatchPlaybackMode, getPlaybackLabel, isRecentFinishedMatch, resolveMatchStatus } from '../utils/matchPlayback.js';
+import { getMatchPlaybackMode, getPlaybackLabel, isRecentFinishedMatch } from '../utils/matchPlayback.js';
 
 export default function LiveViewer({ match }) {
-  const resolvedStatus = resolveMatchStatus(match);
   const playbackMode = useMemo(
     () => (match ? getMatchPlaybackMode(match) : null),
-    [match, resolvedStatus]
+    [match]
   );
 
   if (!match) {
