@@ -2,7 +2,6 @@ import { useMemo, useRef, useState } from 'react';
 import MatchDetailPanel from './components/MatchDetailPanel.jsx';
 import FilterTabs from './components/FilterTabs.jsx';
 import LiveViewer from './components/LiveViewer.jsx';
-import MatchChannels from './components/MatchChannels.jsx';
 import Navbar from './components/Navbar.jsx';
 import ScheduleDays from './components/ScheduleDays.jsx';
 import ScheduleFullList from './components/ScheduleFullList.jsx';
@@ -19,7 +18,6 @@ export default function App() {
   const [selectedDate, setSelectedDate] = useState(todayIsoDate());
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedMatchId, setSelectedMatchId] = useState(null);
-  const [activeChannelByMatch, setActiveChannelByMatch] = useState({});
   const [notificationsEnabled, setNotificationsEnabled] = useState(false);
   const [showFullSchedule, setShowFullSchedule] = useState(false);
   const viewerRef = useRef(null);
@@ -66,22 +64,10 @@ export default function App() {
 
   function selectMatch(matchId) {
     setSelectedMatchId(matchId);
-    setActiveChannelByMatch((current) => {
-      if (current[matchId]) return current;
-      const match = fullSchedule.find((item) => String(item.id) === String(matchId));
-      const firstChannel = match?.channels?.[0]?.id;
-      if (!firstChannel) return current;
-      return { ...current, [matchId]: firstChannel };
-    });
 
     requestAnimationFrame(() => {
       viewerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-  }
-
-  function selectChannel(matchId, channelId) {
-    setSelectedMatchId(matchId);
-    setActiveChannelByMatch((current) => ({ ...current, [matchId]: channelId }));
   }
 
   async function enableNotifications() {
@@ -191,13 +177,7 @@ export default function App() {
                 match={match}
                 highlighted={String(selectedMatch?.id) === String(match.id)}
                 onSelect={() => selectMatch(match.id)}
-              >
-                <MatchChannels
-                  match={match}
-                  activeChannelId={activeChannelByMatch[match.id]}
-                  onSelectChannel={selectChannel}
-                />
-              </ScoreCard>
+              />
             ))}
           </section>
         )}

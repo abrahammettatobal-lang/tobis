@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mundial 2026 en vivo · Tobis</title>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0f;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    background: linear-gradient(90deg, #c8102e, #006847);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; }
+  header span { font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 20px; }
+  header a { color: #fff; font-size: 0.8rem; opacity: 0.85; text-decoration: none; }
+  header a:hover { opacity: 1; text-decoration: underline; }
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 16px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .player-wrap {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #222;
+  }
+  video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    display: block;
+  }
+  .player-info {
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .now-playing { font-size: 0.9rem; color: #aaa; }
+  .now-playing strong { color: #fff; display: block; font-size: 1rem; }
+  .live-badge {
+    background: #e00;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+  .controls {
+    padding: 0 16px 14px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    background: #1e1e2e;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+  }
+  .ctrl-btn:hover { background: #2e2e4e; }
+  .quality-select {
+    background: #1e1e2e;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .sidebar { display: flex; flex-direction: column; gap: 14px; }
+  .match-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .match-card:hover { border-color: #006847; background: #141420; }
+  .match-card.active { border-color: #c8102e; background: #1a1015; }
+  .match-time { font-size: 0.72rem; color: #888; margin-bottom: 4px; }
+  .match-teams { font-size: 0.95rem; font-weight: 600; }
+  .match-lang { font-size: 0.72rem; color: #555; margin-top: 6px; }
+  .stream-input {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .stream-input h3 { font-size: 0.85rem; color: #aaa; margin-bottom: 10px; }
+  .stream-input input {
+    width: 100%;
+    background: #1e1e2e;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    margin-bottom: 8px;
+  }
+  .stream-input input::placeholder { color: #555; }
+  .stream-input button {
+    width: 100%;
+    background: #006847;
+    border: none;
+    color: #fff;
+    padding: 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .stream-input button:hover { background: #007a55; }
+  .stats-bar {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 10px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .stat { text-align: center; }
+  .stat-val { font-size: 1.1rem; font-weight: 700; color: #00e87a; }
+  .stat-label { font-size: 0.7rem; color: #666; margin-top: 2px; }
+  .error-overlay {
+    display: none;
+    padding: 16px;
+    background: #1a0a0a;
+    border-top: 1px solid #330000;
+    color: #ff6666;
+    font-size: 0.82rem;
+  }
+  .source-note {
+    font-size: 0.7rem;
+    color: #555;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .source-note a { color: #00e87a; }
+  @media(max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex;align-items:center;gap:12px">
+    <h1>⚽ Mundial 2026</h1>
+    <span>Reproductor en vivo</span>
+  </div>
+  <a href="/">← Volver a Tobis</a>
+</header>
+
+<div class="layout">
+  <div class="player-wrap">
+    <video id="video" controls autoplay muted playsinline></video>
+    <div class="player-info">
+      <div class="now-playing">
+        <strong id="stream-title">Elige un canal deportivo</strong>
+        <span id="stream-sub">Señales IPTV públicas vía iptv-org</span>
+      </div>
+      <div class="live-badge" id="live-badge">● EN VIVO</div>
+    </div>
+    <div class="controls">
+      <button class="ctrl-btn" onclick="toggleMute()">🔇 Silenciar</button>
+      <button class="ctrl-btn" onclick="togglePiP()">⧉ PiP</button>
+      <button class="ctrl-btn" onclick="toggleFullscreen()">⛶ Pantalla completa</button>
+      <select class="quality-select" id="quality-select" onchange="switchQuality(this.value)">
+        <option value="-1">Calidad automática</option>
+      </select>
+      <button class="ctrl-btn" onclick="reloadStream()">↺ Recargar</button>
+    </div>
+    <div class="error-overlay" id="error-box"></div>
+  </div>
+
+  <div class="sidebar">
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-val" id="stat-bitrate">—</div>
+        <div class="stat-label">Velocidad (kbps)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" id="stat-buf">—</div>
+        <div class="stat-label">Búfer (s)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" id="stat-drop">0</div>
+        <div class="stat-label">Fotogramas perdidos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val" id="stat-latency">—</div>
+        <div class="stat-label">Latencia (s)</div>
+      </div>
+    </div>
+
+    <div id="channel-list"></div>
+
+    <div class="stream-input">
+      <h3>🔗 URL HLS personalizada</h3>
+      <input type="text" id="custom-url" placeholder="https://ejemplo.com/stream.m3u8" />
+      <button onclick="loadCustomStream()">Cargar transmisión</button>
+      <p class="source-note">
+        Fuentes de <a href="https://github.com/iptv-org/iptv" target="_blank" rel="noreferrer">iptv-org/iptv</a>.
+        La disponibilidad varía; algunas señales tienen geo-bloqueo o se caen.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Public sports HLS feeds — iptv-org US/MX lists (Jun 2026)
+const CHANNELS = [
+  {
+    id: 'tudn',
+    name: 'TUDN',
+    region: 'México / USA',
+    lang: 'ES',
+    network: 'Univision',
+    url: 'https://streaming-live-fcdn.api.prd.univisionnow.com/tudn/tudn.isml/hls/tudn.m3u8'
+  },
+  {
+    id: 'fox-deportes',
+    name: 'Fox Deportes',
+    region: 'USA',
+    lang: 'ES',
+    network: 'Fox',
+    url: 'https://cors-proxy.cooks.fyi/http://23.237.104.106:8080/USA_FOX_DEPORTES/index.m3u8'
+  },
+  {
+    id: 'espn-deportes',
+    name: 'ESPN Deportes',
+    region: 'USA',
+    lang: 'ES',
+    network: 'ESPN',
+    url: 'http://origin.thetvapp.to/hls/espn-deportes/mono.m3u8'
+  },
+  {
+    id: 'bein-xtra',
+    name: 'beIN SPORTS XTRA',
+    region: 'USA',
+    lang: 'EN/AR',
+    network: 'beIN',
+    url: 'https://bein-xtra-bein.amagi.tv/playlist.m3u8'
+  },
+  {
+    id: 'fs1',
+    name: 'Fox Sports 1',
+    region: 'USA',
+    lang: 'EN',
+    network: 'Fox',
+    url: 'https://cors-proxy.cooks.fyi/http://190.11.225.124:5000/live/fs1_hd/playlist.m3u8'
+  },
+  {
+    id: 'fs2',
+    name: 'Fox Sports 2',
+    region: 'USA',
+    lang: 'EN',
+    network: 'Fox',
+    url: 'https://tvsen7.aynaott.com/foxsports2/index.m3u8'
+  },
+  {
+    id: 'nbc-sports',
+    name: 'NBC Sports NOW',
+    region: 'USA',
+    lang: 'EN',
+    network: 'NBC',
+    url: 'https://d4whmvwm0rdvi.cloudfront.net/10007/99993008/hls/master.m3u8?ads.xumo_channelId=99993008'
+  },
+  {
+    id: 'telemundo',
+    name: 'Telemundo Al Día',
+    region: 'USA',
+    lang: 'ES',
+    network: 'NBCU',
+    url: 'https://d1rqgw5gocwo9i.cloudfront.net/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-nbcu-stitched/10a44c37-f976-4d2b-ab23-8637a7a094ca/3.m3u8'
+  },
+  {
+    id: 'univision',
+    name: 'Univision (KMEX)',
+    region: 'Los Angeles',
+    lang: 'ES',
+    network: 'Univision',
+    url: 'https://streaming-live-fcdn.api.prd.univisionnow.com/kmex/kmex.isml/hls/kmex.m3u8'
+  },
+  {
+    id: 'itv-deportes',
+    name: 'ITV Deportes',
+    region: 'México',
+    lang: 'ES',
+    network: 'ITV',
+    url: 'https://thm-it-roku.otteravision.com/thm/it/it.m3u8'
+  },
+  {
+    id: 'ftf-sports',
+    name: 'FTF Sports',
+    region: 'USA',
+    lang: 'EN',
+    network: 'FTF',
+    url: 'https://1657061170.rsc.cdn77.org/HLS/FTF-LINEAR.m3u8'
+  },
+  {
+    id: 'azteca-intl',
+    name: 'Azteca Internacional',
+    region: 'México',
+    lang: 'ES',
+    network: 'TV Azteca',
+    url: 'https://azt-mun.otteravision.com/azt/mun/mun.m3u8'
+  }
+];
+
+let hls = null;
+let currentChannel = null;
+let statsInterval = null;
+let loadGeneration = 0;
+let activeUrl = null;
+let safariMetaHandler = null;
+
+function safePlay(video) {
+  if (!video) return;
+  video.play().catch((err) => {
+    const msg = err?.message || '';
+    if (
+      err?.name === 'AbortError' ||
+      err?.name === 'NotAllowedError' ||
+      msg.includes('aborted') ||
+      msg.includes('interrupted')
+    ) return;
+  });
+}
+
+function teardownHlsPlayer() {
+  clearInterval(statsInterval);
+  statsInterval = null;
+
+  const video = document.getElementById('video');
+  const instance = hls;
+  hls = null;
+  activeUrl = null;
+
+  if (safariMetaHandler && video) {
+    video.removeEventListener('loadedmetadata', safariMetaHandler);
+    safariMetaHandler = null;
+  }
+
+  if (!instance) {
+    if (video) {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    }
+    return Promise.resolve();
+  }
+
+  video?.pause();
+
+  try {
+    instance.stopLoad();
+  } catch (_) {}
+
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      try { instance.destroy(); } catch (_) {}
+      if (video) {
+        video.removeAttribute('src');
+        video.load();
+      }
+      resolve();
+    };
+
+    if (instance.media) {
+      const onDetached = () => {
+        instance.off(Hls.Events.MEDIA_DETACHED, onDetached);
+        finish();
+      };
+      instance.on(Hls.Events.MEDIA_DETACHED, onDetached);
+      try {
+        instance.detachMedia();
+      } catch (_) {
+        finish();
+        return;
+      }
+      setTimeout(finish, 200);
+    } else {
+      finish();
+    }
+  });
+}
+
+function renderChannels() {
+  const list = document.getElementById('channel-list');
+  list.innerHTML = CHANNELS.map(ch => `
+    <div class="match-card ${currentChannel?.id === ch.id ? 'active' : ''}"
+         id="card-${ch.id}" onclick="loadChannel('${ch.id}')">
+      <div class="match-time">📍 ${ch.region} · ${ch.network}</div>
+      <div class="match-teams">${ch.name}</div>
+      <div class="match-lang">${ch.lang} · HLS</div>
+    </div>
+  `).join('');
+}
+
+async function loadChannel(id) {
+  const ch = CHANNELS.find(c => c.id === id);
+  if (!ch) return;
+  if (currentChannel?.id === id && activeUrl === ch.url && hls) return;
+  currentChannel = ch;
+  renderChannels();
+  document.getElementById('stream-title').textContent = ch.name;
+  document.getElementById('stream-sub').textContent = `${ch.region} · ${ch.network}`;
+  await loadHLS(ch.url);
+}
+
+async function loadHLS(url) {
+  hideError();
+  const generation = ++loadGeneration;
+  await teardownHlsPlayer();
+  if (generation !== loadGeneration) return;
+
+  const video = document.getElementById('video');
+  activeUrl = url;
+
+  if (Hls.isSupported()) {
+    hls = new Hls({
+      enableWorker: true,
+      lowLatencyMode: true,
+      backBufferLength: 90,
+      maxBufferLength: 30,
+      maxMaxBufferLength: 600,
+      liveSyncDurationCount: 3,
+      liveMaxLatencyDurationCount: 10,
+      manifestLoadingTimeOut: 10000,
+      manifestLoadingMaxRetry: 3,
+      levelLoadingTimeOut: 10000,
+      fragLoadingTimeOut: 20000,
+    });
+
+    hls.loadSource(url);
+    hls.attachMedia(video);
+
+    hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
+      if (generation !== loadGeneration) return;
+      populateQualityLevels(data.levels);
+      safePlay(video);
+    });
+
+    hls.on(Hls.Events.ERROR, (_, data) => {
+      if (generation !== loadGeneration) return;
+      if (data.fatal) {
+        switch(data.type) {
+          case Hls.ErrorTypes.NETWORK_ERROR:
+            showError(`Error de red: ${data.details} — reintentando...`);
+            hls.startLoad();
+            break;
+          case Hls.ErrorTypes.MEDIA_ERROR:
+            showError(`Error de medios: ${data.details} — recuperando...`);
+            hls.recoverMediaError();
+            break;
+          default:
+            showError(`Error fatal: ${data.details}`);
+            teardownHlsPlayer();
+        }
+      }
+    });
+
+    statsInterval = setInterval(() => updateStats(video), 1000);
+
+  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    safariMetaHandler = () => safePlay(video);
+    video.addEventListener('loadedmetadata', safariMetaHandler, { once: true });
+    video.src = url;
+  } else {
+    showError('HLS no es compatible con este navegador.');
+  }
+}
+
+function populateQualityLevels(levels) {
+  const sel = document.getElementById('quality-select');
+  sel.innerHTML = '<option value="-1">Calidad automática</option>';
+  levels.forEach((lvl, i) => {
+    const label = lvl.height ? `${lvl.height}p` : `Nivel ${i}`;
+    const bitrate = lvl.bitrate ? ` (${Math.round(lvl.bitrate/1000)}kbps)` : '';
+    sel.innerHTML += `<option value="${i}">${label}${bitrate}</option>`;
+  });
+}
+
+function switchQuality(val) {
+  if (!hls) return;
+  hls.currentLevel = parseInt(val);
+}
+
+function updateStats(video) {
+  if (!hls) return;
+  const level = hls.levels?.[hls.currentLevel];
+  const bitrate = level?.bitrate ? Math.round(level.bitrate / 1000) : '—';
+  const buf = video.buffered.length
+    ? (video.buffered.end(video.buffered.length - 1) - video.currentTime).toFixed(1)
+    : '—';
+  const dropped = video.getVideoPlaybackQuality?.()?.droppedVideoFrames ?? '—';
+  const latency = hls.latency ? hls.latency.toFixed(2) : '—';
+
+  document.getElementById('stat-bitrate').textContent = bitrate;
+  document.getElementById('stat-buf').textContent = buf;
+  document.getElementById('stat-drop').textContent = dropped;
+  document.getElementById('stat-latency').textContent = latency;
+}
+
+function toggleMute() {
+  const v = document.getElementById('video');
+  v.muted = !v.muted;
+}
+
+async function togglePiP() {
+  const v = document.getElementById('video');
+  if (document.pictureInPictureElement) await document.exitPictureInPicture();
+  else if (document.pictureInPictureEnabled) await v.requestPictureInPicture();
+}
+
+function toggleFullscreen() {
+  const wrap = document.querySelector('.player-wrap');
+  if (!document.fullscreenElement) wrap.requestFullscreen();
+  else document.exitFullscreen();
+}
+
+async function reloadStream() {
+  if (currentChannel) await loadChannel(currentChannel.id);
+  else if (document.getElementById('custom-url').value) await loadCustomStream();
+}
+
+async function loadCustomStream() {
+  const url = document.getElementById('custom-url').value.trim();
+  if (!url) return;
+  if (activeUrl === url && hls) return;
+  currentChannel = null;
+  renderChannels();
+  document.getElementById('stream-title').textContent = 'Transmisión personalizada';
+  document.getElementById('stream-sub').textContent = url;
+  await loadHLS(url);
+}
+
+function showError(msg) {
+  const box = document.getElementById('error-box');
+  box.style.display = 'block';
+  box.textContent = '⚠ ' + msg;
+}
+function hideError() {
+  document.getElementById('error-box').style.display = 'none';
+}
+
+renderChannels();
+loadChannel('bein-xtra');
+</script>
+</body>
+</html>

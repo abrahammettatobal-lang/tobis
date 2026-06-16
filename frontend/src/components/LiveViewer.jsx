@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import MatchNotStarted from './MatchNotStarted.jsx';
 import P2PPlayer from './P2PPlayer.jsx';
-import YouTubeLivePlayer from './YouTubeLivePlayer.jsx';
-import { getMatchPlaybackMode, getPlaybackLabel } from '../utils/matchPlayback.js';
+import SportsHLSViewer from './SportsHLSViewer.jsx';
+import { getMatchPlaybackMode, getPlaybackLabel, isRecentFinishedMatch } from '../utils/matchPlayback.js';
 
 export default function LiveViewer({ match }) {
   const playbackMode = useMemo(
@@ -16,8 +16,8 @@ export default function LiveViewer({ match }) {
         <p className="text-xs uppercase tracking-[0.2em] text-white/40">Reproductor</p>
         <h2 className="mt-2 text-lg font-semibold text-white/80">Elige un partido</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-white/50">
-          Toca cualquier partido de la lista. Tobis buscara transmision en vivo o repeticion segun
-          el estado del encuentro.
+          Toca un partido en vivo para sintonizar canales del Mundial, o uno finalizado para
+          buscar la repetición.
         </p>
       </section>
     );
@@ -29,6 +29,16 @@ export default function LiveViewer({ match }) {
       : playbackMode === 'replay'
         ? 'border-accentBlue/40 bg-accentBlue/10 text-accentBlue'
         : 'border-white/15 bg-white/5 text-white/60';
+
+  const isRecentReplay =
+    playbackMode === 'replay' && isRecentFinishedMatch(match);
+
+  const statusHint =
+    playbackMode === 'upcoming'
+      ? 'Esperando el inicio del encuentro'
+      : playbackMode === 'live'
+        ? 'Sintonizando TV en directo — cambia de canal si no ves el partido'
+        : 'Buscando repetición del partido...';
 
   return (
     <section
@@ -43,13 +53,7 @@ export default function LiveViewer({ match }) {
           <h2 className="truncate text-base font-semibold sm:text-lg md:text-xl">
             {match.teamA.name} vs {match.teamB.name}
           </h2>
-          <p className="mt-0.5 text-xs text-white/50 sm:mt-1 sm:text-sm">
-            {playbackMode === 'upcoming'
-              ? 'Esperando el inicio del encuentro'
-              : playbackMode === 'live'
-                ? 'Buscando transmision en vivo...'
-                : 'Buscando repeticion...'}
-          </p>
+          <p className="mt-0.5 text-xs text-white/50 sm:mt-1 sm:text-sm">{statusHint}</p>
         </div>
 
         <span
@@ -59,10 +63,21 @@ export default function LiveViewer({ match }) {
         </span>
       </div>
 
+      {playbackMode === 'replay' && isRecentReplay ? (
+        <div className="mb-4 rounded-xl border border-sky-500/25 bg-sky-500/10 px-3 py-2.5 text-xs leading-relaxed text-sky-100 sm:px-4">
+          <p className="font-semibold text-sky-50">Repetición puede no estar disponible aún</p>
+          <p className="mt-1">
+            Si el partido terminó hace poco, es normal que no aparezca en la búsqueda. Las
+            repeticiones suelen tardar horas en publicarse. Vuelve a intentarlo más tarde o mira
+            los canales oficiales (ViX, Peacock, YouTube).
+          </p>
+        </div>
+      ) : null}
+
       {playbackMode === 'upcoming' ? (
         <MatchNotStarted match={match} />
       ) : playbackMode === 'live' ? (
-        <YouTubeLivePlayer match={match} />
+        <SportsHLSViewer match={match} mode="live" />
       ) : (
         <P2PPlayer match={match} mode="replay" autoPlay />
       )}

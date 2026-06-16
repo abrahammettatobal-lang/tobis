@@ -21,7 +21,16 @@ export default function Navbar({ selectedDate, onDateChange }) {
           </div>
         </div>
 
-        <label className="flex shrink-0 flex-col items-end gap-0.5 text-xs text-white/70 sm:gap-1 sm:text-sm">
+        <div className="flex shrink-0 items-center gap-2">
+          <a
+            href="/wc-stream.html"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-medium text-white/80 transition hover:bg-white/10 sm:inline"
+          >
+            Reproductor en vivo
+          </a>
+        <label className="flex flex-col items-end gap-0.5 text-xs text-white/70 sm:gap-1 sm:text-sm">
           <span className="sr-only sm:not-sr-only sm:inline">Fecha</span>
           <input
             type="date"
@@ -33,6 +42,7 @@ export default function Navbar({ selectedDate, onDateChange }) {
             {formatDateLabel(selectedDate)}
           </span>
         </label>
+        </div>
       </div>
     </header>
   );
