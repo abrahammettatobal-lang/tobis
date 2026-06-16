@@ -1,5 +1,6 @@
 const STREAMER_BASE = import.meta.env.VITE_STREAMER_API || 'http://localhost:8091';
 const STREAMER_TIMEOUT_MS = 90_000;
+const REPLAY_SEARCH_TIMEOUT_MS = 25_000;
 const LIVE_SEARCH_TIMEOUT_MS = 90_000;
 const HEALTH_TIMEOUT_MS = 5_000;
 
@@ -39,7 +40,7 @@ export async function searchReplaySources(query, mode = 'replay', match = null) 
 
   if (!match && query) params.set('q', query);
 
-  const timeoutMs = mode === 'live' ? LIVE_SEARCH_TIMEOUT_MS : STREAMER_TIMEOUT_MS;
+  const timeoutMs = mode === 'live' ? LIVE_SEARCH_TIMEOUT_MS : REPLAY_SEARCH_TIMEOUT_MS;
   return request(`/api/search?${params}`, { signal: AbortSignal.timeout(timeoutMs) });
 }
 

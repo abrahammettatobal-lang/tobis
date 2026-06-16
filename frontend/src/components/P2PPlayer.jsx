@@ -13,6 +13,7 @@ import {
 
 export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) {
   const [online, setOnline] = useState(false);
+  const [healthChecked, setHealthChecked] = useState(false);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [searching, setSearching] = useState(false);
@@ -45,8 +46,13 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
     setManualMode(!autoPlay);
     setAudioBlocked(false);
     setAudioHint('');
+    setHealthChecked(false);
     autoRunRef.current += 1;
   }, [match?.id, mode, autoPlay]);
+
+  const offlineMessage = isLocalStreamerUrl(getStreamerBaseUrl())
+    ? 'Servicio P2P offline. En tu PC ejecuta: cd streamer && npm start'
+    : 'Repeticiones P2P no disponibles. Configura VITE_STREAMER_API en Vercel con tu streamer en Railway.';
 
   const enableAudio = useCallback(async () => {
     const video = videoRef.current;
@@ -103,10 +109,32 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
   }, [streamUrl]);
 
   useEffect(() => {
-    checkStreamerHealth().then(setOnline);
-    const timer = setInterval(() => checkStreamerHealth().then(setOnline), 15000);
-    return () => clearInterval(timer);
-  }, []);
+    let active = true;
+    setHealthChecked(false);
+
+    checkStreamerHealth().then((ok) => {
+      if (!active) return;
+      setOnline(ok);
+      setHealthChecked(true);
+      if (autoPlay && !ok) {
+        setManualMode(true);
+        setSearching(false);
+        setConnecting(false);
+        setError(offlineMessage);
+      }
+    });
+
+    const timer = setInterval(() => {
+      checkStreamerHealth().then((ok) => {
+        if (active) setOnline(ok);
+      });
+    }, 15000);
+
+    return () => {
+      active = false;
+      clearInterval(timer);
+    };
+  }, [autoPlay, offlineMessage, match?.id]);
 
   useEffect(() => {
     if (!streamUrl) return undefined;
@@ -194,18 +222,28 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
     } catch (err) {
       setError(
         online
-          ? err.message || 'No se pudo buscar fuentes P2P. Intenta de nuevo.'
-          : 'Servicio P2P offline. Ejecuta: cd streamer && npm start'
+          ? err.message?.includes('timeout') || err.name === 'TimeoutError'
+            ? 'La busqueda tardo demasiado. Prueba de nuevo o busca manualmente.'
+            : err.message || 'No se pudo buscar fuentes P2P. Intenta de nuevo.'
+          : offlineMessage
       );
       setManualMode(true);
       return [];
     } finally {
       setSearching(false);
     }
-  }, [query, mode, isLive, online, match]);
+  }, [query, mode, isLive, online, match, offlineMessage]);
+
+  function cancelAutoSearch() {
+    autoRunRef.current += 1;
+    setSearching(false);
+    setConnecting(false);
+    setManualMode(true);
+    setError('Busqueda cancelada. Puedes intentar otra consulta abajo.');
+  }
 
   useEffect(() => {
-    if (!autoPlay || !match || !online || manualMode) return undefined;
+    if (!autoPlay || !match || !healthChecked || !online || manualMode) return undefined;
 
     const runId = autoRunRef.current;
     let cancelled = false;
@@ -252,25 +290,29 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
         setResults(items);
 
         if (!items.length) {
-          setError(
-            isLive
-              ? 'Sin torrent P2P para este partido en vivo todavia. Reintentando cada 20 s. Usa los canales de YouTube mas abajo mientras tanto.'
-              : 'No hay repeticion P2P todavia. Prueba buscar manualmente o usa los canales de abajo.'
-          );
-          setManualMode(true);
-          return;
-        }
-
-        await playItem(items[0]);
-      } catch (err) {
-        if (cancelled || runId !== autoRunRef.current) return;
         setError(
-          online
-            ? err.message || 'No se pudo conectar a la fuente P2P.'
-            : 'Servicio P2P offline. Ejecuta: cd streamer && npm start'
+          isLive
+            ? 'Sin torrent P2P para este partido en vivo todavia. Reintentando cada 20 s.'
+            : 'No hay repeticion P2P para este partido todavia. Prueba buscar manualmente abajo.'
         );
         setManualMode(true);
-      } finally {
+        return;
+      }
+
+      await playItem(items[0]);
+    } catch (err) {
+      if (cancelled || runId !== autoRunRef.current) return;
+      const timedOut =
+        err.name === 'TimeoutError' || String(err.message || '').includes('timeout');
+      setError(
+        timedOut
+          ? 'La busqueda tardo demasiado. El streamer puede estar saturado — prueba manualmente.'
+          : online
+            ? err.message || 'No se pudo conectar a la fuente P2P.'
+            : offlineMessage
+      );
+      setManualMode(true);
+    } finally {
         if (!cancelled && runId === autoRunRef.current) {
           setSearching(false);
         }
@@ -282,7 +324,7 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
     return () => {
       cancelled = true;
     };
-  }, [autoPlay, match?.id, mode, online, manualMode, isLive, getTorrentRef]);
+  }, [autoPlay, match?.id, mode, online, healthChecked, manualMode, isLive, getTorrentRef, offlineMessage]);
 
   useEffect(() => {
     if (!isLive || !autoPlay || !online || streamUrl || connecting || searching) {
@@ -331,11 +373,19 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
   }
 
   const showSearchForm = manualMode || Boolean(error);
-  const showAutoLoading = autoPlay && !manualMode && (searching || connecting) && !streamUrl;
+  const showAutoLoading =
+    autoPlay && healthChecked && online && !manualMode && (searching || connecting) && !streamUrl;
 
   return (
     <div className="space-y-4">
-      {!online ? (
+      {!healthChecked && autoPlay ? (
+        <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-6 text-center">
+          <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-white/70" />
+          <p className="text-sm text-white/60">Comprobando servicio de repeticiones...</p>
+        </div>
+      ) : null}
+
+      {healthChecked && !online ? (
         <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-sm text-amber-100">
           {isLocalStreamerUrl(getStreamerBaseUrl()) ? (
             <>
@@ -346,10 +396,10 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
             </>
           ) : (
             <>
-              Repeticiones P2P no disponibles en este momento.
+              Repeticiones P2P no disponibles en produccion.
               <span className="mt-1 block text-xs text-amber-100/70">
-                Los partidos en vivo usan transmision automatica. Para repeticiones, el streamer debe
-                estar desplegado (Render/Fly).
+                En Vercel agrega <code className="text-amber-50">VITE_STREAMER_API</code> con la
+                URL de tu streamer en Railway y redeploy.
               </span>
             </>
           )}
@@ -363,8 +413,15 @@ export default function P2PPlayer({ match, mode = 'replay', autoPlay = false }) 
             {connecting ? 'Conectando a peers P2P...' : autoSearchLabel}
           </p>
           <p className="mt-1 text-xs text-white/45">
-            {connecting ? 'Puede tardar 10-30 segundos' : 'Elegimos la mejor fuente automaticamente'}
+            {connecting ? 'Puede tardar 10-30 segundos' : 'Maximo ~25 segundos, luego puedes buscar manualmente'}
           </p>
+          <button
+            type="button"
+            onClick={cancelAutoSearch}
+            className="mt-4 rounded-full border border-white/20 px-4 py-2 text-xs text-white/70 hover:bg-white/10"
+          >
+            Cancelar busqueda
+          </button>
         </div>
       ) : null}
 
