@@ -4,7 +4,7 @@ import { attachChannelsToMatches } from '../utils/channels.js';
 
 const allMatches = attachChannelsToMatches(scheduleData.matches || []);
 
-export function getStaticSchedulePayload(date) {
+export function getStaticSchedulePayload(date, { backendUnreachable = false } = {}) {
   const dayMatches = filterMatchesByCalendarDate(allMatches, date);
 
   return {
@@ -12,9 +12,9 @@ export function getStaticSchedulePayload(date) {
     allMatches,
     lastUpdatedAt: null,
     source: 'local',
-    message:
-      'Calendario local sin marcadores en vivo. Configura VITE_API_URL con tu backend Railway.',
+    message: 'Calendario local (sin conexión a openfootball).',
     usingFallback: true,
+    internalError: backendUnreachable ? 'Backend no responde' : null,
     totalInSchedule: allMatches.length,
     recommendedRefreshSeconds: 300,
     budgetExhausted: false,

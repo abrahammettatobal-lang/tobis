@@ -115,6 +115,9 @@ router.get('/worldcup/today', async (req, res) => {
       recommendedRefreshSeconds: payload.recommendedRefreshSeconds,
       message: payload.message,
       budgetExhausted: payload.budgetExhausted,
+      internalError: payload.internalError || null,
+      usingFallback:
+        payload.source === 'local' || Boolean(payload.internalError) || payload.budgetExhausted,
     });
   } catch {
     const cache = getCache();
@@ -133,6 +136,8 @@ router.get('/worldcup/today', async (req, res) => {
       recommendedRefreshSeconds: cache.recommendedRefreshSeconds || 300,
       message: cache.message || 'Mostrando la última actualización disponible',
       budgetExhausted: cache.budgetExhausted || false,
+      internalError: cache.lastError || null,
+      usingFallback: true,
     });
   }
 });

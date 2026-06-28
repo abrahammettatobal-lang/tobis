@@ -226,6 +226,7 @@ export async function updateWorldCupData(date = getTodayInTimezone(), locale = '
 
   const apiKey = getApiKey();
   if (!apiKey) {
+    lastInternalError = 'SPORTSAPI_KEY o RAPIDAPI_KEY no configurada';
     const allMatches = await buildAllMatches(date, workingSet);
     return buildResponse({
       matches: workingSet,

@@ -23,12 +23,11 @@ export default function Navbar({ selectedDate, onDateChange }) {
 
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href="/wc-stream.html"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-medium text-white/80 transition hover:bg-white/10 sm:inline"
+            href="/en-vivo.html"
+            className="touch-target inline-flex shrink-0 items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-2 text-[11px] font-semibold text-accent transition hover:bg-accent/20 active:scale-[0.98] sm:px-3 sm:text-xs"
           >
-            Reproductor en vivo
+            <span className="sm:hidden">En vivo</span>
+            <span className="hidden sm:inline">Reproductor en vivo</span>
           </a>
         <label className="flex flex-col items-end gap-0.5 text-xs text-white/70 sm:gap-1 sm:text-sm">
           <span className="sr-only sm:not-sr-only sm:inline">Fecha</span>

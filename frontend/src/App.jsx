@@ -10,9 +10,10 @@ import {
   requestNotificationPermission,
   useGoalNotifications,
 } from './hooks/useGoalNotifications.js';
-import { useMatches } from './hooks/useMatches.js';
+import { useMatches, matchCounts } from './hooks/useMatches.js';
 import { useMatchDetail } from './hooks/useMatchDetail.js';
-import { isLiveDataSource, todayIsoDate } from './services/api.js';
+import { todayIsoDate } from './services/api.js';
+import { resolveMatchStatus } from './utils/matchPlayback.js';
 
 export default function App() {
   const [selectedDate, setSelectedDate] = useState(todayIsoDate());
@@ -34,21 +35,12 @@ export default function App() {
 
   const matches = useMemo(() => {
     if (activeFilter === 'all') return dayMatches;
-    return dayMatches.filter((match) => match.status === activeFilter);
+    return dayMatches.filter((match) => resolveMatchStatus(match) === activeFilter);
   }, [dayMatches, activeFilter]);
-
-  const usingFallback = meta?.usingFallback || !isLiveDataSource(meta?.source);
 
   useGoalNotifications(dayMatches, notificationsEnabled);
 
-  const counts = useMemo(
-    () => ({
-      all: dayMatches.length,
-      'En Vivo': dayMatches.filter((match) => match.status === 'En Vivo').length,
-      Finalizado: dayMatches.filter((match) => match.status === 'Finalizado').length,
-    }),
-    [dayMatches]
-  );
+  const counts = useMemo(() => matchCounts(dayMatches), [dayMatches]);
 
   const selectedMatch =
     fullSchedule.find((match) => String(match.id) === String(selectedMatchId)) || null;
@@ -84,25 +76,10 @@ export default function App() {
           <div className="min-w-0">
             <h2 className="text-base font-semibold sm:text-lg">Partidos del día</h2>
             <p className="text-xs leading-relaxed text-white/60 sm:text-sm">
-              {meta?.message || 'Cargando actualización...'}
-              {meta?.apiBudget
-                ? ` · API ${meta.apiBudget.usedToday}/${meta.apiBudget.limit} hoy`
-                : ''}
+              {meta?.message || 'Cargando calendario...'}
               {dayMatches.length ? ` · ${dayMatches.length} este día` : ''}
-              {meta?.totalInSchedule ? ` · ${meta.totalInSchedule} en fase de grupos` : ''}
+              {meta?.totalInSchedule ? ` · ${meta.totalInSchedule} en el torneo` : ''}
             </p>
-            {meta?.budgetExhausted ? (
-              <p className="mt-1 text-xs text-white/45">
-                Mostrando la última actualización disponible
-              </p>
-            ) : null}
-            {usingFallback && !loading ? (
-              <p className="mt-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-100">
-                Marcadores en vivo no conectados. En Vercel define{' '}
-                <code className="text-amber-50">VITE_API_URL</code> con tu backend Railway y
-                agrega <code className="text-amber-50">SPORTSAPI_KEY</code> en Railway.
-              </p>
-            ) : null}
           </div>
 
           <button

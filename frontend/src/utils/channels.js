@@ -1,3 +1,5 @@
+import { translateTeam } from './teams.js';
+
 function buildYoutubeSearchUrl(query) {
   const params = new URLSearchParams({
     listType: 'search',
@@ -7,34 +9,6 @@ function buildYoutubeSearchUrl(query) {
     rel: '0',
   });
   return `https://www.youtube.com/embed?${params.toString()}`;
-}
-
-const TEAM_ES = {
-  'South Korea': 'Corea del Sur',
-  'Czech Republic': 'República Checa',
-  Czechia: 'Chequia',
-  'South Africa': 'Sudáfrica',
-  'United States': 'Estados Unidos',
-  USA: 'Estados Unidos',
-  'Bosnia and Herzegovina': 'Bosnia',
-  'Bosnia-Herzegovina': 'Bosnia',
-  England: 'Inglaterra',
-  Germany: 'Alemania',
-  Spain: 'España',
-  France: 'Francia',
-  Brazil: 'Brasil',
-  Argentina: 'Argentina',
-  Mexico: 'México',
-  Japan: 'Japón',
-  Netherlands: 'Países Bajos',
-  Portugal: 'Portugal',
-  Croatia: 'Croacia',
-  Switzerland: 'Suiza',
-  Canada: 'Canadá',
-};
-
-function translateTeam(name) {
-  return TEAM_ES[name] || name;
 }
 
 export function buildMatchChannels(match) {

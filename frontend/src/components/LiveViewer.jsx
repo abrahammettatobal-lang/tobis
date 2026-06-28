@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import MatchNotStarted from './MatchNotStarted.jsx';
 import P2PPlayer from './P2PPlayer.jsx';
-import SportsHLSViewer from './SportsHLSViewer.jsx';
 import { getMatchPlaybackMode, getPlaybackLabel, isRecentFinishedMatch } from '../utils/matchPlayback.js';
 
 export default function LiveViewer({ match }) {
@@ -16,9 +15,14 @@ export default function LiveViewer({ match }) {
         <p className="text-xs uppercase tracking-[0.2em] text-white/40">Reproductor</p>
         <h2 className="mt-2 text-lg font-semibold text-white/80">Elige un partido</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-white/50">
-          Toca un partido en vivo para sintonizar canales del Mundial, o uno finalizado para
-          buscar la repetición.
+          Toca un partido finalizado para buscar la repetición, o abre el reproductor en vivo.
         </p>
+        <a
+          href="/en-vivo.html"
+          className="touch-target mt-4 inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-black transition hover:brightness-110 active:scale-[0.98]"
+        >
+          Abrir reproductor en vivo
+        </a>
       </section>
     );
   }
@@ -37,7 +41,7 @@ export default function LiveViewer({ match }) {
     playbackMode === 'upcoming'
       ? 'Esperando el inicio del encuentro'
       : playbackMode === 'live'
-        ? 'Sintonizando TV en directo — cambia de canal si no ves el partido'
+        ? 'Transmisión en el reproductor Tobis — DSports y señales alternativas'
         : 'Buscando repetición del partido...';
 
   return (
@@ -68,8 +72,7 @@ export default function LiveViewer({ match }) {
           <p className="font-semibold text-sky-50">Repetición puede no estar disponible aún</p>
           <p className="mt-1">
             Si el partido terminó hace poco, es normal que no aparezca en la búsqueda. Las
-            repeticiones suelen tardar horas en publicarse. Vuelve a intentarlo más tarde o mira
-            los canales oficiales (ViX, Peacock, YouTube).
+            repeticiones suelen tardar horas en publicarse.
           </p>
         </div>
       ) : null}
@@ -77,7 +80,22 @@ export default function LiveViewer({ match }) {
       {playbackMode === 'upcoming' ? (
         <MatchNotStarted match={match} />
       ) : playbackMode === 'live' ? (
-        <SportsHLSViewer match={match} mode="live" />
+        <div className="rounded-xl border border-accent/25 bg-accent/5 p-5 text-center sm:p-8">
+          <p className="text-3xl" aria-hidden="true">
+            📡
+          </p>
+          <h3 className="mt-3 text-lg font-semibold">Partido en vivo</h3>
+          <p className="mx-auto mt-2 max-w-md text-sm text-white/60">
+            Abre el reproductor Tobis con calendario, tabla, goleadores y 10 señales DSports.
+            Cambia de señal si no ves este partido.
+          </p>
+          <a
+            href="/en-vivo.html"
+            className="touch-target mt-5 inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110 active:scale-[0.98]"
+          >
+            Ver transmisión en vivo
+          </a>
+        </div>
       ) : (
         <P2PPlayer match={match} mode="replay" autoPlay />
       )}

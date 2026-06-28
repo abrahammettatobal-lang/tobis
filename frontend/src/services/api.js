@@ -1,14 +1,16 @@
 import {
-  getStaticMatchDetail,
-  getStaticSchedulePayload,
-} from './scheduleFallback.js';
+  buildMatchDetailPayload,
+  fetchOpenfootballSchedule,
+  fetchOpenfootballToday,
+  getCachedOpenfootballMatch,
+} from './openfootball.js';
+import { getStaticMatchDetail, getStaticSchedulePayload } from './scheduleFallback.js';
 import { filterMatchesByCalendarDate } from '../utils/matchCalendar.js';
 
 const API_BASE = import.meta.env.VITE_API_URL || '';
-const API_TIMEOUT_MS = 25_000;
 const LIVE_STREAM_TIMEOUT_MS = 35_000;
 
-async function fetchFromApi(path, timeoutMs = API_TIMEOUT_MS) {
+async function fetchFromApi(path, timeoutMs = 25_000) {
   const response = await fetch(`${API_BASE}${path}`, {
     signal: AbortSignal.timeout(timeoutMs),
   });
@@ -19,17 +21,19 @@ async function fetchFromApi(path, timeoutMs = API_TIMEOUT_MS) {
 }
 
 export async function fetchMatchDetail(matchId, date) {
-  if (API_BASE) {
+  let match = getCachedOpenfootballMatch(matchId);
+
+  if (!match) {
     try {
-      const params = new URLSearchParams();
-      if (date) params.set('date', date);
-      const query = params.toString();
-      return await fetchFromApi(
-        `/api/worldcup/match/${matchId}${query ? `?${query}` : ''}`
-      );
+      await fetchOpenfootballSchedule();
+      match = getCachedOpenfootballMatch(matchId);
     } catch {
       /* fallback below */
     }
+  }
+
+  if (match) {
+    return buildMatchDetailPayload(match);
   }
 
   return getStaticMatchDetail(matchId);
@@ -55,49 +59,18 @@ export async function fetchLiveStream(matchId, { date, refresh = false } = {}) {
 }
 
 export async function fetchWorldCupToday(date) {
-  if (API_BASE) {
-    try {
-      const params = new URLSearchParams();
-      if (date) params.set('date', date);
-      const query = params.toString();
-      const payload = await fetchFromApi(
-        `/api/worldcup/today${query ? `?${query}` : ''}`
-      );
-
-      if (payload.allMatches?.length || payload.matches?.length) {
-        return payload;
-      }
-    } catch (error) {
-      console.warn('[tobis] API no disponible, usando calendario local:', error?.message);
-    }
+  try {
+    return await fetchOpenfootballToday(date);
+  } catch (error) {
+    console.warn('[tobis] Openfootball no disponible, usando calendario local:', error?.message);
+    return getStaticSchedulePayload(date, { backendUnreachable: true });
   }
-
-  return getStaticSchedulePayload(date);
-}
-
-export function isLiveDataSource(source) {
-  return source === 'api' || source === 'cache';
-}
-
-/** @deprecated Usar fetchWorldCupToday */
-export async function fetchMatches({ date } = {}) {
-  const payload = await fetchWorldCupToday(date);
-  return {
-    matches: payload.matches,
-    meta: {
-      lastUpdated: payload.lastUpdatedAt,
-      source: payload.source,
-      apiBudget: payload.apiBudget,
-      recommendedRefreshSeconds: payload.recommendedRefreshSeconds,
-      message: payload.message,
-      budgetExhausted: payload.budgetExhausted,
-    },
-  };
 }
 
 export function formatKickoffTime(isoString) {
-  const date = new Date(isoString);
-  return date.toLocaleTimeString('es-MX', {
+  const parsed = new Date(isoString);
+  return parsed.toLocaleTimeString('es-MX', {
+    timeZone: 'America/Mexico_City',
     hour: '2-digit',
     minute: '2-digit',
   });
@@ -120,4 +93,18 @@ export function todayIsoDate() {
 
 export function filterDayMatches(allMatches, date) {
   return filterMatchesByCalendarDate(allMatches, date);
+}
+
+/** @deprecated Usar fetchWorldCupToday */
+export async function fetchMatches({ date } = {}) {
+  const payload = await fetchWorldCupToday(date);
+  return {
+    matches: payload.matches,
+    meta: {
+      lastUpdated: payload.lastUpdatedAt,
+      source: payload.source,
+      recommendedRefreshSeconds: payload.recommendedRefreshSeconds,
+      message: payload.message,
+    },
+  };
 }
