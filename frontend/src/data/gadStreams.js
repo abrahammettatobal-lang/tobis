@@ -36,6 +36,16 @@ export const GAD_STREAM_OPTIONS = [
   { id: 'p3s2', label: 'Partido 3 – S2', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=2' },
   { id: 'p3s3', label: 'Partido 3 – S3', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=3' },
   { id: 'p3s4', label: 'Partido 3 – S4', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=4' },
+  { id: 'p3s5', label: 'Partido 3 – S5', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=5' },
+  { id: 'p3s6', label: 'Partido 3 – S6', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=6' },
+  { id: 'p3s7', label: 'Partido 3 – S7', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=7' },
+  { id: 'p3s8', label: 'Partido 3 – S8', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=8' },
+  { id: 'p3s9', label: 'Partido 3 – S9', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=9' },
+  { id: 'p3s10', label: 'Partido 3 – S10', url: 'https://stream-xhd.com/live1.php?stream=dsports3&op=10' },
+  { id: 'p4s1', label: 'Partido 4 – S1', url: 'https://stream-xhd.com/live1.php?stream=dsports4' },
+  { id: 'p4s2', label: 'Partido 4 – S2', url: 'https://stream-xhd.com/live1.php?stream=dsports4&op=2' },
+  { id: 'p4s3', label: 'Partido 4 – S3', url: 'https://stream-xhd.com/live1.php?stream=dsports4&op=3' },
+  { id: 'p4s4', label: 'Partido 4 – S4', url: 'https://stream-xhd.com/live1.php?stream=dsports4&op=4' },
 ];
 
 export { OPENFOOTBALL_WC_URL } from '../services/openfootball.js';
