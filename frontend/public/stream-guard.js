@@ -222,12 +222,6 @@
   function restoreHome() {
     if (global.location.origin !== LOCKED_ORIGIN) {
       global.location.replace(HOME_URL);
-      return;
-    }
-
-    const path = `${global.location.pathname}${global.location.search}${global.location.hash}`;
-    if (path !== HOME_URL && !path.endsWith('/en-vivo.html')) {
-      global.location.replace(HOME_URL);
     }
   }
 
@@ -278,7 +272,7 @@
 
         const link = target.closest('a[href]');
         if (!link) return;
-        if (link.closest('#live-player, .stream-cage, .stream-click-shield, .stream-ad-mask-top, .stream-ad-mask-bottom')) {
+        if (link.closest('#live-player, #tobis-live-player, .stream-cage, .stream-click-shield, .stream-ad-mask-top, .stream-ad-mask-bottom')) {
           return;
         }
 

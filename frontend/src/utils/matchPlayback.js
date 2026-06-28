@@ -62,27 +62,16 @@ export function getMatchPlaybackMode(match) {
 
   const status = resolveMatchStatus(match);
 
-  if (status === 'Finalizado') return 'replay';
+  if (status === 'Finalizado') return 'finished';
   if (status === 'En Vivo') return 'live';
   if (status === 'Por empezar') return 'upcoming';
 
-  return 'replay';
+  return 'finished';
 }
 
 export function getPlaybackLabel(mode) {
   if (mode === 'live') return 'En vivo';
-  if (mode === 'replay') return 'Repetición';
+  if (mode === 'finished') return 'Finalizado';
   if (mode === 'upcoming') return 'Programado';
   return '';
-}
-
-/** Partido finalizado hace poco — la repetición puede no estar disponible aún */
-export function isRecentFinishedMatch(match) {
-  if (getMatchPlaybackMode(match) !== 'replay') return false;
-
-  const kickoffMs = parseKickoffMs(match);
-  if (kickoffMs == null) return true;
-
-  const hoursSinceKickoff = (Date.now() - kickoffMs) / (1000 * 60 * 60);
-  return hoursSinceKickoff < 48;
 }

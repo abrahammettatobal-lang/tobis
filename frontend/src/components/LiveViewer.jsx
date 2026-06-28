@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import MatchNotStarted from './MatchNotStarted.jsx';
-import P2PPlayer from './P2PPlayer.jsx';
-import { getMatchPlaybackMode, getPlaybackLabel, isRecentFinishedMatch } from '../utils/matchPlayback.js';
+import StreamFrame from './StreamFrame.jsx';
+import { getMatchPlaybackMode, getPlaybackLabel } from '../utils/matchPlayback.js';
 
 export default function LiveViewer({ match }) {
   const playbackMode = useMemo(
@@ -15,14 +15,9 @@ export default function LiveViewer({ match }) {
         <p className="text-xs uppercase tracking-[0.2em] text-white/40">Reproductor</p>
         <h2 className="mt-2 text-lg font-semibold text-white/80">Elige un partido</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-white/50">
-          Toca un partido finalizado para buscar la repetición, o abre el reproductor en vivo.
+          Toca un partido en vivo o mira la señal DSports abajo.
         </p>
-        <a
-          href="./en-vivo.html"
-          className="touch-target mt-4 inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-black transition hover:brightness-110 active:scale-[0.98]"
-        >
-          Abrir reproductor en vivo
-        </a>
+        <StreamFrame className="mx-auto mt-5 max-w-3xl text-left" />
       </section>
     );
   }
@@ -30,19 +25,14 @@ export default function LiveViewer({ match }) {
   const statusBadge =
     playbackMode === 'live'
       ? 'border-accent/40 bg-accent/10 text-accent'
-      : playbackMode === 'replay'
-        ? 'border-accentBlue/40 bg-accentBlue/10 text-accentBlue'
-        : 'border-white/15 bg-white/5 text-white/60';
-
-  const isRecentReplay =
-    playbackMode === 'replay' && isRecentFinishedMatch(match);
+      : 'border-white/15 bg-white/5 text-white/60';
 
   const statusHint =
     playbackMode === 'upcoming'
       ? 'Esperando el inicio del encuentro'
       : playbackMode === 'live'
-        ? 'Transmisión en el reproductor Tobis — DSports y señales alternativas'
-        : 'Buscando repetición del partido...';
+        ? 'Señal DSports con bloqueo de anuncios — cambia de señal si no ves este partido'
+        : 'Partido finalizado · sin repetición, pero puedes ver la señal en vivo';
 
   return (
     <section
@@ -67,37 +57,27 @@ export default function LiveViewer({ match }) {
         </span>
       </div>
 
-      {playbackMode === 'replay' && isRecentReplay ? (
-        <div className="mb-4 rounded-xl border border-sky-500/25 bg-sky-500/10 px-3 py-2.5 text-xs leading-relaxed text-sky-100 sm:px-4">
-          <p className="font-semibold text-sky-50">Repetición puede no estar disponible aún</p>
-          <p className="mt-1">
-            Si el partido terminó hace poco, es normal que no aparezca en la búsqueda. Las
-            repeticiones suelen tardar horas en publicarse.
-          </p>
+      {playbackMode === 'finished' ? (
+        <div className="mb-3 flex items-center justify-center gap-3 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2">
+          <span className="text-2xl font-bold tabular-nums text-white">
+            {match.teamA?.goals ?? '–'} – {match.teamB?.goals ?? '–'}
+          </span>
+          <span className="text-xs text-white/45">Marcador final</span>
         </div>
       ) : null}
 
       {playbackMode === 'upcoming' ? (
         <MatchNotStarted match={match} />
-      ) : playbackMode === 'live' ? (
-        <div className="rounded-xl border border-accent/25 bg-accent/5 p-5 text-center sm:p-8">
-          <p className="text-3xl" aria-hidden="true">
-            📡
-          </p>
-          <h3 className="mt-3 text-lg font-semibold">Partido en vivo</h3>
-          <p className="mx-auto mt-2 max-w-md text-sm text-white/60">
-            Abre el reproductor Tobis con calendario, tabla, goleadores y 10 señales DSports.
-            Cambia de señal si no ves este partido.
-          </p>
-          <a
-            href="./en-vivo.html"
-            className="touch-target mt-5 inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110 active:scale-[0.98]"
-          >
-            Ver transmisión en vivo
-          </a>
-        </div>
       ) : (
-        <P2PPlayer match={match} mode="replay" autoPlay />
+        <>
+          {playbackMode === 'finished' ? (
+            <p className="mb-3 rounded-lg border border-amber-500/20 bg-amber-500/10 px-3 py-2 text-xs leading-relaxed text-amber-100/90">
+              No hay repetición de este partido. La señal de abajo es transmisión en vivo de
+              DSports — cambia de opción si ves otro encuentro.
+            </p>
+          ) : null}
+          <StreamFrame />
+        </>
       )}
     </section>
   );

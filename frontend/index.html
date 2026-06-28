@@ -12,6 +12,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Tobis" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="tobis-stream-proxy" content="auto" />
+    <meta name="tobis-stream-proxy-base" content="" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +24,7 @@
   </head>
   <body class="bg-carbon text-white antialiased">
     <div id="root"></div>
+    <script src="./stream-guard.js"></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
