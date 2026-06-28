@@ -32,8 +32,11 @@
     const flag = document.querySelector('meta[name="tobis-stream-proxy"]')?.content?.trim();
     if (flag === 'off') return false;
     if (flag === 'on') return true;
-    if (isCapacitorNative()) return false;
-    return true;
+
+    const base = document
+      .querySelector('meta[name="tobis-stream-proxy-base"]')
+      ?.content?.trim();
+    return Boolean(base);
   }
 
   function resolveStreamProxyBase() {
@@ -109,25 +112,25 @@
 
   function installStreamClickShield(cage, iframe) {
     if (!cage || !iframe) return null;
+    if (cage.__tobisClickShield) return cage.__tobisClickShield;
 
     let locked = false;
     let lockTimer = null;
-    let autoLockTimer = null;
+    let shield = null;
 
-    let shield = cage.querySelector('.stream-click-shield');
-    if (!shield) {
+    function ensureShield() {
+      if (shield?.isConnected) return shield;
       shield = document.createElement('div');
-      shield.className = 'stream-click-shield is-waiting';
-      shield.setAttribute('role', 'button');
-      shield.setAttribute('aria-label', 'Toca una vez para iniciar la transmisión');
-      shield.innerHTML = '<span class="stream-click-shield__hint">Toca para iniciar</span>';
+      shield.className = 'stream-click-shield is-locked';
+      shield.setAttribute('aria-hidden', 'true');
       cage.appendChild(shield);
+      return shield;
     }
 
     function lock() {
+      if (locked) return;
       locked = true;
-      shield.classList.remove('is-waiting');
-      shield.classList.add('is-locked');
+      ensureShield();
       shield.style.pointerEvents = 'auto';
       iframe.style.pointerEvents = 'none';
     }
@@ -135,70 +138,35 @@
     function reset() {
       locked = false;
       clearTimeout(lockTimer);
-      clearTimeout(autoLockTimer);
-      shield.classList.remove('is-locked');
-      shield.classList.add('is-waiting');
-      shield.style.pointerEvents = 'auto';
       iframe.style.pointerEvents = 'auto';
+      shield?.remove();
+      shield = null;
     }
 
-    function passFirstTap() {
+    function armLock(delayMs = 2000) {
       if (locked) return;
-      shield.style.pointerEvents = 'none';
       clearTimeout(lockTimer);
-      lockTimer = setTimeout(lock, 500);
+      lockTimer = setTimeout(lock, delayMs);
     }
 
-    function scheduleAutoLock() {
-      clearTimeout(autoLockTimer);
-      autoLockTimer = setTimeout(() => {
-        if (!locked) lock();
-      }, 2800);
+    function onInteract() {
+      if (locked) return;
+      armLock(1500);
     }
 
-    function blockLocked(e) {
-      if (!locked) return;
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
+    cage.addEventListener('pointerdown', onInteract);
+    iframe.addEventListener('load', () => armLock(6000));
 
-    iframe.addEventListener('load', scheduleAutoLock);
-
-    shield.addEventListener(
-      'touchstart',
-      (e) => {
-        if (locked) {
-          e.preventDefault();
-          return;
-        }
-        passFirstTap();
-      },
-      { passive: false }
-    );
-
-    shield.addEventListener('mousedown', (e) => {
-      if (locked) {
-        e.preventDefault();
-        return;
-      }
-      if (e.button === 0) passFirstTap();
-    });
-
-    ['click', 'touchend', 'dblclick', 'contextmenu'].forEach((type) => {
-      shield.addEventListener(type, blockLocked, true);
-    });
-
-    reset();
-    clickShieldState = { reset, lock };
-    return clickShieldState;
+    const api = { reset, lock, armLock };
+    cage.__tobisClickShield = api;
+    clickShieldState = api;
+    return api;
   }
 
   function ensureClickShield(iframe) {
     const cage = iframe?.closest?.('.stream-cage');
     if (!cage) return;
-    if (!cage.querySelector('.stream-click-shield')) {
-      installStreamClickShield(cage, iframe);
-    }
+    installStreamClickShield(cage, iframe);
   }
 
   function setStreamSrc(iframe, rawUrl) {
@@ -215,6 +183,8 @@
       iframe.src = nextSrc;
     }
 
+    const cage = iframe?.closest?.('.stream-cage');
+    clickShieldState = cage?.__tobisClickShield || clickShieldState;
     clickShieldState?.reset();
     return true;
   }

@@ -11,12 +11,12 @@ function getStreamGuard() {
 
 export default function StreamFrame({ className = '' }) {
   const iframeRef = useRef(null);
+  const cageRef = useRef(null);
   const [activeUrl, setActiveUrl] = useState(GAD_DEFAULT_STREAM);
   const hintId = useId();
 
   useEffect(() => {
-    const guard = getStreamGuard();
-    guard?.installPageGuard?.();
+    getStreamGuard()?.installPageGuard?.();
   }, []);
 
   useEffect(() => {
@@ -30,31 +30,25 @@ export default function StreamFrame({ className = '' }) {
 
   function switchSignal(url) {
     setActiveUrl(url);
-    const guard = getStreamGuard();
-    const iframe = iframeRef.current;
-    if (guard && iframe) {
-      guard.setStreamSrc(iframe, url);
-    }
   }
 
   return (
     <div className={className}>
-      <div
-        className="stream-cage stream-cage--crop-ads relative w-full overflow-hidden rounded-xl bg-black"
-        style={{ paddingTop: '56.25%' }}
-      >
-        <iframe
-          ref={iframeRef}
-          id="tobis-live-player"
-          title="Transmisión DSports"
-          className="stream-cage__iframe"
-          allow={STREAM_IFRAME_ALLOW}
-          allowFullScreen
-        />
+      <div className="relative w-full overflow-hidden rounded-xl bg-black" style={{ paddingTop: '56.25%' }}>
+        <div ref={cageRef} className="stream-cage stream-cage--crop-ads absolute inset-0">
+          <iframe
+            ref={iframeRef}
+            id="tobis-live-player"
+            title="Transmisión DSports"
+            className="stream-cage__iframe"
+            allow={STREAM_IFRAME_ALLOW}
+            allowFullScreen
+          />
+        </div>
       </div>
 
       <p id={hintId} className="mt-2 text-center text-xs text-white/50">
-        Toca una vez para iniciar · luego queda bloqueado para evitar anuncios
+        Toca el reproductor para iniciar · se bloquea solo tras unos segundos para evitar anuncios
       </p>
 
       <div

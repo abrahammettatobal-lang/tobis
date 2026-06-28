@@ -61,7 +61,6 @@ body {
 /* Stream embed (mismos bloqueos que en-vivo.html) */
 .stream-cage {
   position: relative;
-  contain: strict;
   isolation: isolate;
 }
 
