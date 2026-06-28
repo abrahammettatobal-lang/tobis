@@ -3,6 +3,7 @@ import cors from 'cors';
 import express from 'express';
 import { getCache, hydrateMemoryFromDisk, refreshCache } from './cache.js';
 import apiRoutes from './routes/api.js';
+import streamRoutes from './routes/stream.js';
 import { updateWorldCupData } from './services/worldCupSync.js';
 import { buildCorsOptions } from './utils/corsOptions.js';
 import { getTodayInTimezone } from './utils/timezone.js';
@@ -14,6 +15,7 @@ const LIVESCORE_LOCALE = process.env.LIVESCORE_LOCALE || 'en';
 app.use(cors(buildCorsOptions()));
 app.use(express.json());
 app.use('/api', apiRoutes);
+app.use('/api/stream', streamRoutes);
 
 app.use((error, _req, res, _next) => {
   console.error('[backend]', error);

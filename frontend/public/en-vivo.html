@@ -2,10 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="tobis-stream-proxy" content="auto">
+    <meta name="tobis-stream-proxy-base" content="">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://raw.githubusercontent.com; frame-src 'self' https://stream-xhd.com https://*.stream-xhd.com; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <link rel="manifest" href="./manifest.webmanifest">
     <title>Reproductor en vivo · Tobis · Mundial 2026</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="./stream-guard.js"></script>
 
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -319,13 +324,85 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.6);
             flex-shrink: 0;
+            overscroll-behavior: contain;
+            touch-action: pan-y pinch-zoom;
+            isolation: isolate;
         }
-        .video-container iframe {
+        .stream-cage {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            contain: strict;
+            isolation: isolate;
+            transform: translateZ(0);
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Recorta banners del embed y centra el video */
+        .stream-cage--crop-ads iframe {
+            width: 118%;
+            height: 118%;
+            left: -9%;
+            top: -7%;
+        }
+        .stream-ad-mask-top,
+        .stream-ad-mask-bottom {
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 7;
+            pointer-events: auto;
+            touch-action: none;
+            background: linear-gradient(to bottom, #000 70%, transparent);
+        }
+        .stream-ad-mask-top {
+            top: 0;
+            height: 12%;
+            background: linear-gradient(to bottom, #000 85%, rgba(0, 0, 0, 0.92) 100%);
+        }
+        .stream-ad-mask-bottom {
+            bottom: 0;
+            height: 18%;
+            background: linear-gradient(to top, #000 85%, rgba(0, 0, 0, 0.92) 100%);
+        }
+        .stream-click-shield {
+            position: absolute;
+            inset: 0;
+            z-index: 8;
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .stream-click-shield.is-waiting {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.45);
+            cursor: pointer;
+        }
+        .stream-click-shield__hint {
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid var(--accent, #e8b923);
+            color: #fff;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            pointer-events: none;
+        }
+        .stream-click-shield.is-locked {
+            background: transparent;
+            cursor: default;
+        }
+        .video-container iframe,
+        .stream-cage iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: 0;
+            max-width: 100%;
+            max-height: 100%;
         }
 
         /* Now playing bar */
@@ -662,9 +739,9 @@
 <!-- ══════════════ SIDEBAR ══════════════ -->
 <aside id="sidebar">
     <div class="sidebar-header">
-        <a href="/" class="back-link">← Marcadores</a>
+        <a href="./" class="back-link">← Marcadores</a>
         <div class="logo">
-            <img src="/tobis-color.svg" alt="Tobis" class="logo-icon" />
+            <img src="./tobis-color.svg" alt="Tobis" class="logo-icon" />
             <h1>Tobis <span>Reproductor en vivo · Mundial 2026</span></h1>
         </div>
         <div class="phase-filter">
@@ -696,16 +773,19 @@
     </div>
 
     <div class="video-container">
-
-        <iframe id="live-player" src="https://stream-xhd.com/live1.php?stream=dsports"
-            scrolling="no" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="stream-cage stream-cage--crop-ads" id="stream-cage">
+            <iframe id="live-player"
+                title="Transmisión en vivo Tobis"
+                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
     </div>
 
     <div id="now-playing">
         <i class="fas fa-satellite-dish"></i>
         <div>
             <div id="now-playing-text">DSports – Transmisión en vivo</div>
-            <div id="now-playing-sub">Cambia de señal si no ves el partido</div>
+            <div id="now-playing-sub">Toca una vez; luego queda bloqueado. Banners tapados automáticamente.</div>
         </div>
     </div>
 
@@ -1379,13 +1459,26 @@ document.querySelectorAll('.pill').forEach(pill => {
     });
 });
 
-// ── Stream options ────────────────────────────────────────────────
+// ── Stream options (lista blanca) ─────────────────────────────────
 const player = document.getElementById('live-player');
+const DEFAULT_STREAM = 'https://stream-xhd.com/live1.php?stream=dsports';
+
+if (window.TobisStreamGuard) {
+    TobisStreamGuard.installPageGuard();
+    TobisStreamGuard.installStreamFrame(player);
+    TobisStreamGuard.setStreamSrc(player, DEFAULT_STREAM);
+}
+
 document.querySelectorAll('.option-item').forEach(opt => {
     opt.addEventListener('click', () => {
         document.querySelectorAll('.option-item').forEach(o => o.classList.remove('active'));
         opt.classList.add('active');
-        player.src = opt.dataset.url;
+        const url = opt.dataset.url;
+        if (window.TobisStreamGuard) {
+            TobisStreamGuard.setStreamSrc(player, url);
+        } else {
+            player.src = url;
+        }
     });
 });
 
@@ -1457,15 +1550,7 @@ function startBlockerClock() {
     setInterval(checkMatchWindow, 1000);
 }
 
-// ── Popup block from iframe ───────────────────────────────────────
-const _open = window.open.bind(window);
-window.open = function(...args) {
-    const win = _open(...args);
-    if (win) setTimeout(() => win.close(), 50);
-    return win;
-};
-if (window.opener !== null) window.close();
-
+// Guard instalado vía stream-guard.js
 </script>
 <!-- ══════════════ GOALS MODAL ══════════════ -->
 <div id="modal-overlay" onclick="closeModal()"></div>

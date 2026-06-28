@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tobis</string>
+    <string name="title_activity_main">Tobis</string>
+    <string name="package_name">com.tobis.mundial</string>
+    <string name="custom_url_scheme">com.tobis.mundial</string>
+</resources>

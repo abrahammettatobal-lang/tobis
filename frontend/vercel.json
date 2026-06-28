@@ -2,5 +2,7 @@
   "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/((?!api/|en-vivo\\.html|stream-guard\\.js|sw\\.js|workbox-|assets/|icons/|manifest\\.webmanifest).*)", "destination": "/index.html" }
+  ]
 }

@@ -1,0 +1,42 @@
+{
+  "name": "Tobis - Mundial 2026",
+  "short_name": "Tobis",
+  "description": "Marcadores, calendario y reproductor en vivo del Mundial 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "lang": "es-MX",
+  "categories": ["sports", "entertainment"],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Reproductor en vivo",
+      "short_name": "En vivo",
+      "description": "Ver transmisión DSports",
+      "url": "./en-vivo.html",
+      "icons": [{ "src": "./icons/icon-96.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ]
+}

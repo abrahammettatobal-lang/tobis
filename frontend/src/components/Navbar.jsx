@@ -6,7 +6,7 @@ export default function Navbar({ selectedDate, onDateChange }) {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-3 py-3 sm:gap-4 sm:px-4 sm:py-4">
         <div className="flex min-w-0 items-center gap-3">
           <img
-            src="/tobis-color.svg"
+            src={`${import.meta.env.BASE_URL}tobis-color.svg`}
             alt="Tobis"
             className="h-10 w-auto shrink-0 sm:h-12"
           />
@@ -23,7 +23,7 @@ export default function Navbar({ selectedDate, onDateChange }) {
 
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href="/en-vivo.html"
+            href="./en-vivo.html"
             className="touch-target inline-flex shrink-0 items-center rounded-full border border-accent/30 bg-accent/10 px-2.5 py-2 text-[11px] font-semibold text-accent transition hover:bg-accent/20 active:scale-[0.98] sm:px-3 sm:text-xs"
           >
             <span className="sm:hidden">En vivo</span>

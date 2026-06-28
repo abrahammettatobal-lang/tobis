@@ -1,4 +1,17 @@
-/** Señales del reproductor (mismo sistema que mundialgad.web.app) */
+export const STREAM_IFRAME_ALLOW =
+  'autoplay; encrypted-media; fullscreen; picture-in-picture';
+
+export const STREAM_ALLOWED_HOSTS = ['stream-xhd.com', 'www.stream-xhd.com'];
+
+export function isAllowedStreamHost(url) {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'https:' && STREAM_ALLOWED_HOSTS.includes(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
 export const GAD_DEFAULT_STREAM =
   'https://stream-xhd.com/live1.php?stream=dsports';
 

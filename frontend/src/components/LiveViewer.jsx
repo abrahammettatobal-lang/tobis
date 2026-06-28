@@ -18,7 +18,7 @@ export default function LiveViewer({ match }) {
           Toca un partido finalizado para buscar la repetición, o abre el reproductor en vivo.
         </p>
         <a
-          href="/en-vivo.html"
+          href="./en-vivo.html"
           className="touch-target mt-4 inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-black transition hover:brightness-110 active:scale-[0.98]"
         >
           Abrir reproductor en vivo
@@ -90,7 +90,7 @@ export default function LiveViewer({ match }) {
             Cambia de señal si no ves este partido.
           </p>
           <a
-            href="/en-vivo.html"
+            href="./en-vivo.html"
             className="touch-target mt-5 inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:brightness-110 active:scale-[0.98]"
           >
             Ver transmisión en vivo

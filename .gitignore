@@ -13,7 +13,7 @@ backend/data/*.json
 streamer/descargas/
 *.log
 
-# Nested clone (not part of Tobis)
+frontend/.android-sdk/
 backend/FlashscoreScraping/
 
 # OS / IDE

@@ -1,0 +1,30 @@
+{
+  "appId": "com.tobis.mundial",
+  "appName": "Tobis",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "allowNavigation": [
+      "stream-xhd.com",
+      "*.stream-xhd.com",
+      "raw.githubusercontent.com"
+    ]
+  },
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#121212"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1800,
+      "launchAutoHide": true,
+      "backgroundColor": "#121212",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#121212"
+    }
+  }
+}
