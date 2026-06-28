@@ -724,6 +724,32 @@
             position: relative; /* needed for absolute overlay */
         }
 
+        body.embed-mode {
+            overflow: auto;
+            min-height: 100dvh;
+        }
+        body.embed-mode #sidebar,
+        body.embed-mode #main-blocker,
+        body.embed-mode .back-link {
+            display: none !important;
+        }
+        body.embed-mode #main {
+            width: 100%;
+            padding: 10px;
+            gap: 10px;
+            overflow: visible;
+        }
+        body.embed-mode .video-container {
+            border-radius: 0;
+            box-shadow: none;
+        }
+        body.embed-mode #now-playing {
+            padding: 8px 12px;
+        }
+        body.embed-mode .options-section {
+            padding-bottom: 6px;
+        }
+
         /* ── RESPONSIVE: mobile stack ────────────────── */
         @media (max-width: 700px) {
             body { flex-direction: column; overflow: auto; }
@@ -734,6 +760,12 @@
     </style>
 </head>
 <body>
+<script>
+window.TOBIS_EMBED_MODE = new URLSearchParams(window.location.search).get('embedded') === '1';
+if (window.TOBIS_EMBED_MODE) {
+    document.body.classList.add('embed-mode');
+}
+</script>
 
 <!-- ══════════════ SIDEBAR ══════════════ -->
 <aside id="sidebar">
@@ -821,11 +853,42 @@
             <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=4">
                 <i class="fas fa-play-circle"></i> Partido 2 – S4
             </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=5">
+                <i class="fas fa-play-circle"></i> Partido 2 – S5
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=6">
+                <i class="fas fa-play-circle"></i> Partido 2 – S6
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=7">
+                <i class="fas fa-play-circle"></i> Partido 2 – S7
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=8">
+                <i class="fas fa-play-circle"></i> Partido 2 – S8
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=9">
+                <i class="fas fa-play-circle"></i> Partido 2 – S9
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports2&op=10">
+                <i class="fas fa-play-circle"></i> Partido 2 – S10
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports3">
+                <i class="fas fa-play-circle"></i> Partido 3 – S1
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports3&op=2">
+                <i class="fas fa-play-circle"></i> Partido 3 – S2
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports3&op=3">
+                <i class="fas fa-play-circle"></i> Partido 3 – S3
+            </li>
+            <li class="option-item" data-url="https://stream-xhd.com/live1.php?stream=dsports3&op=4">
+                <i class="fas fa-play-circle"></i> Partido 3 – S4
+            </li>
         </ul>
     </div>
 </main>
 
 <script>
+const EMBED_MODE = window.TOBIS_EMBED_MODE === true;
 // ── Flags map (EN → emoji) ────────────────────────────────────────
 const FLAGS = {
     'Mexico':'🇲🇽','South Africa':'🇿🇦','South Korea':'🇰🇷',
@@ -1487,6 +1550,11 @@ function matchDatetimeCDMX(m) {
 }
 
 function checkMatchWindow() {
+    if (EMBED_MODE) {
+        document.getElementById('main-blocker').classList.remove('visible');
+        return;
+    }
+
     if (!matches.length) return;
 
     const now = new Date();
